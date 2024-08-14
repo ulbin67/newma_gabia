@@ -528,9 +528,8 @@ MigrationBackup/
 secrets.json
 
 # End of https://www.toptal.com/developers/gitignore/api/django,vs
-project_/secrets.json
-project_/newmadb.sqlite3
-project_/manage_apply/migrations/0001_initial.py
-project_/qna/migrations/0001_initial.py
-project_/single_page/migrations/0001_initial.py
-project_/secrets.json
+ewmadb.sqlite3
+manage_apply/migrations/0001_initial.py
+qna/migrations/0001_initial.py
+single_page/migrations/0001_initial.py
+
