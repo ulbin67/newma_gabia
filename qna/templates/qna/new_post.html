@@ -1,0 +1,95 @@
+{% extends 'single_page/base.html' %}
+{% block main_area %}
+{% load static %}
+<style>
+    .warning {
+        position: relative;
+        font-size: 12px;
+        color: red;
+        padding: 5px;
+        border-radius: 4px;
+    }
+    h3{
+                font-weight: 700;
+            }
+</style>
+<script>
+    function checkNormal(value) {
+        return value.trim() === "";
+    }
+
+    function check_input() {
+        var postname = document.getElementById("postname").value;
+        var contents = document.getElementById("contents").value;
+        var password = document.getElementById("password").value;
+
+        if (checkNormal(postname)) {
+            alert("제목을 입력해주세요");
+            return false;
+        }
+        if (checkNormal(contents)) {
+            alert("내용을 입력해주세요");
+            return false;
+        }
+        if (!password || !password.match(/^\d{4}$/)) {
+            alert("비밀번호는 숫자 4자리로 입력해주세요. (예: 1234)");
+            return false;
+        }
+        return true;
+    }
+</script>
+<body>
+    <div class="mx-auto p-2" style="width: auto;">
+        <div class="d-flex justify-content-center">
+            <h3>게시물 작성</h3>
+        </div>
+    </div>
+    <form method="POST" enctype="multipart/form-data" onsubmit="return check_input()">
+        {% csrf_token %}
+        <div class="container">
+        
+        
+            <div class="mb-3">
+                <label for="postname" class="form-label">제목</label>
+                <input id="postname" class="form-control" type="text" aria-label="aplcan_num" name="postname">
+                <div class="float-end">
+                    <div class="mb-3">
+                        <div class="p-2"></div>
+                        <label for="password" class="form-label">비밀번호</label>
+                        <input id="password" class="form-control" type="text" aria-label="password" name="password">
+                        <div class="warning password" style="display: block;">비밀번호는 숫자 4자리로 입력해주세요. (ex.1234)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="contents" class="form-label">내용</label><br>
+                <div class="p-2"></div>
+                <input type="file" name="mainphoto" label for="exampleFormControlTextarea1" class="form-label"><br>
+                <textarea id="contents" class="form-control" type="text" aria-label="aplcan_num" name="contents" rows="10"></textarea>
+            </div>
+            <a button type="button" class="btn btn-primary p-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1rem;" href="/qna/">목록</a>
+            <div class="float-end">
+                <input type="submit" value="등록" class="btn btn-primary">
+            </div>
+        </div>
+        {% if user.is_staff %}
+        <div class="mb-3">
+            <label for="post_type" class="form-label">게시물 유형</label>
+            <select id="post_type" class="form-select" name="is_faq">
+                <option value="True">자주 묻는 질문</option>
+                <option value="False">일반 게시물</option>
+            </select>
+        </div>
+        <div class="container">
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">댓글</label>
+                <input class="form-control" type="text" aria-label="aplcan_num" name="answer">
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="등록" label for="exampleFormControlTextarea1" class="form-label">
+            </div>
+        </div>
+        {% endif %}
+    </form>
+</body>
+{% endblock %}

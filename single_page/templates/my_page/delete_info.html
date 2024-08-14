@@ -1,0 +1,79 @@
+<html lang="en">
+{% load static %}
+{% load widget_tweaks %}
+<head>
+    <meta charset="UTF-8">
+    <title>login.html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'single_page/script.JS' %}"></script>
+    <link href="{% static 'bootstrap/bootstrap.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <script src="{% static 'bootstrap/bootstrap.js' %}" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'single_page/pretendard.css' %}">
+    <link href="{% static 'bootstrap/custom.css' %}" rel="stylesheet">
+    <style>
+        .form-border {
+            border: 1px solid #d1d1d1; /* 부드러운 회색 테두리 */
+            padding: 20px;
+            border-radius: 15px; /* 더 부드러운 둥근 모서리 */
+            width: 100%;
+            max-width: 500px; /* 최대 너비 제한 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
+            background-color: #ffffff; /* 배경색을 명확하게 설정 */
+        }
+        .container {
+            padding: 20px; /* 컨테이너에 패딩 추가 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container w-100 vh-100 d-flex align-items-center justify-content-center">
+        <div class="form-border">
+            <div class="text-center mb-3">
+                <a class="navbar-brand" href="#"><img src="{% static 'image/logo.png' %}" alt="로고" width="120px"></a>
+            </div>
+            <div class="container">
+                <h2>회원 탈퇴</h2>
+                <p>정말로 계정을 삭제하시겠습니까?<br> 이 작업은 되돌릴 수 없습니다.</p>
+                <form id="delete-form" method="post">
+                    {% csrf_token %}
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-danger" onclick="submitForm()">계정 삭제</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function submitForm() {
+        var form = document.getElementById('delete-form');
+        var formData = new FormData(form);
+
+        // AJAX 요청
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                if (window.opener) {
+                    // 부모 창에 로그인 페이지로 리다이렉트
+                    window.opener.location.href = "{% url 'login' %}";
+                }
+                window.close(); // 현재 창을 닫습니다.
+            } else {
+                alert('삭제 요청에 실패했습니다.');
+            }
+        })
+        .catch(error => {
+            console.error('삭제 요청 중 오류 발생:', error);
+            alert('삭제 요청 중 오류 발생');
+        });
+    }
+</script>

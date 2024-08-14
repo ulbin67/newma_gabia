@@ -1,0 +1,48 @@
+{% extends 'single_page/base.html' %}
+{% block extra-style %}
+<style>
+    .form-border {
+        border: 1px solid #d1d1d1; /* 부드러운 회색 테두리 */
+        padding: 20px;
+        border-radius: 15px; /* 더 부드러운 둥근 모서리 */
+        width: 100%;
+        max-width: 500px; /* 최대 너비 제한 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
+        background-color: #ffffff; /* 배경색을 명확하게 설정 */
+    }
+    .name {
+        border: 1px solid #565e64;
+        padding: 20px 0;
+    }
+</style>
+{% endblock %}
+
+{% block main_area %}
+{% if form.non_field_errors %}
+    <script>
+        alert("{{ form.non_field_errors.as_text|escapejs }}");
+    </script>
+{% endif %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 50vh; background-color:#F5F6F8;">
+    <div class="form-border bg-white">
+        <h4 class="text-center mb-3">아이디(ID) 찾기</h4>
+        <div class="text-center col-md-12 mb-5">
+            <p>등록된 아이디를 찾았습니다.</p>
+        </div>
+        {% for us_info in user_info %}
+        <div class="name col text-center mb-5">
+            <strong>{{us_info.username}}</strong>
+        </div>
+        {% endfor %}
+        <div class="d-grid mb-4">
+            <a href="{% url 'login' %}" class="btn btn-primary">로그인하러 가기</a>
+        </div>
+        <div class="col-12">
+            <p><a href="{% url 'reset_password'%}">비밀번호를 잃어버리셨나요?</a></p>
+        </div>
+        <div class="col-12">
+            <p><a href="{% url 'register' %}">회원가입하러 가기</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

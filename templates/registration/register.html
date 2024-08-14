@@ -1,0 +1,277 @@
+{% extends 'single_page/base.html' %}
+
+{% load widget_tweaks %}
+{% block extra-style %}
+<style>
+    .border {
+        background-color: white;
+        border-radius: 10px;
+        padding: 40px 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .btn-custom {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-custom:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}
+
+{% block main_area %}
+{% if errors %}
+    <script>
+        alert("{{ errors|escapejs }}");
+    </script>
+{% endif %}
+
+<div class="container d-flex justify-content-center">
+    <div class="border">
+<!--        {% if form.errors %}-->
+<!--        <div class="text-danger">-->
+<!--            {% for field in form %}-->
+<!--                {% if field.errors %}-->
+<!--                    <p>{{field.label}}{{ field.errors }}</p>-->
+<!--                {% endif %}-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--        {% endif %}-->
+        <form name="register" class="col-10 mx-auto" action="" method="post"> {% csrf_token %}
+            <h4 class="mb-3">회원 정보 입력</h4><br>
+            <div class="row mb-3 d-flex align-items-center">
+                <label class="col-2 col-form-label">아이디</label>
+                <div class="col-7">
+                    {{ form.username|add_class:"form-control bg-light"|attr:"readonly=readonly placeholder=아이디"}}
+                </div>
+                <div class="col-3">
+                    <button type="button" id="check_id_button" onclick="return check_id()" class="btn btn-custom">아이디 확인</button>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                    <label class="col-2 col-form-label">비밀번호</label>
+                    <div class="col-10">
+                            {{form.password1|add_class:"form-control mb-2"|attr:"placeholder=비밀번호"}}
+                            <p class="text-danger mb-0">비밀번호는 최소 8자 이상 입력해주세요</p>
+                    </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-2 col-form-label">비밀번호 확인</label>
+                <div class="col-10">
+                    {{form.password2|add_class:"form-control"|attr:"placeholder=비밀번호 확인"}}
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-2 col-form-label">회사명</label>
+                <div class="col-10">
+                    {{form.company_name|add_class:"form-control"|attr:"placeholder=회사명"}}
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-2 col-form-label">담당자명</label>
+                <div class="col-10">
+                    {{form.name|add_class:"form-control"|attr:"placeholder=담당자명"}}
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-2 col-form-label">이메일</label>
+                <div class="col-10">
+                    {{form.email|add_class:"form-control mb-2"|attr:"placeholder=이메일"}}
+                    <p class="text-danger">비밀번호 찾기에서 사용됩니다. 현재 사용하시는 이메일을 작성해주세요</p>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-2 col-form-label">주소</label>
+                <div class="col-10">
+                    <div class="row d-flex align-items-center mb-2">
+                        <div class="col-6">
+                            {{ form.address_num | add_class:"form-control bg-light"|attr:"id=sample6_postcode placeholder=우편번호 readonly='readonly'" }}
+                        </div>
+                        <div class="col-6">
+                            <button type="button" onclick="sample6_execDaumPostcode()" class="btn btn-custom">우편번호 찾기</button>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            {{ form.address_info | add_class:"form-control bg-light"|attr:"id=sample6_address placeholder=도로명주소 readonly='readonly'" }}
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            {{ form.address_detail | add_class:"form-control"|attr:"id=sample6_detailAddress placeholder=상세주소" }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            {{ form.deli_request|add_class:"form-control"|attr:"id=sample6_extraAddress placeholder=세부사항" }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="phone_telecom" class="col-sm-2 col-form-label">휴대폰</label>
+                <div class="col">
+                    <div class="row d-flex align-items-center mb-2">
+                        <div class="col-2 me-2">
+                            {{form.phone_telecom}}
+                        </div>
+                        <div class="col-2">
+                            {{form.phone_part1|add_class:"form-control"|attr:"placeholder=010"}}
+                        </div>
+                        <div class="col-2">
+                            {{form.phone_part2|add_class:"form-control"|attr:"placeholder=XXXX"}}
+                        </div>
+                        <div class="col-2">
+                            {{form.phone_part3|add_class:"form-control"|attr:"placeholder=XXXX"}}
+                        </div>
+                        <div class="col-3">
+                            <button type="button" onclick="verify()" class="btn btn-custom">휴대폰 인증</button>
+                        </div>
+                    </div>
+                    <div class="row d-flex align-items-center">
+                        <div class="col-3">
+                            {{form.verify_code|add_class:"form-control"}}
+                        </div>
+                        <div class="col-9">
+                            <p class="text-danger mb-0">휴대폰으로 받으신 인증번호를 입력해주세요</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-2 col-form-label">개인정보 동의</label>
+                <div class="col-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1" required="required">
+                        <label class="form-check-label" for="gridCheck1">
+                            동의합니다 [필수]
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-left gap-4">
+                <button type="submit" class="btn btn-custom">회원가입</button>
+                <a class="btn btn-custom" href="/git/start_team/newma_repo/project_/single_page/static">돌아가기</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+function check_id() {
+    var username = document.getElementById('id_username').value;
+    window.open("{% url 'check_id' %}?username=" + encodeURIComponent(username),
+        "아이디 중복체크",
+        "left=700,top=200,width=350,height=350,scrollbars=no,resizable=yes");
+}
+
+function sample6_execDaumPostcode() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+            var addr = '';
+            var extraAddr = '';
+
+            if (data.userSelectedType === 'R') {
+                addr = data.roadAddress;
+            } else {
+                addr = data.jibunAddress;
+            }
+
+            if (data.userSelectedType === 'R') {
+                if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+                    extraAddr += data.bname;
+                }
+                if (data.buildingName !== '' && data.apartment === 'Y') {
+                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                if (extraAddr !== '') {
+                    extraAddr = ' (' + extraAddr + ')';
+                }
+                document.getElementById("sample6_extraAddress").value = extraAddr;
+            } else {
+                document.getElementById("sample6_extraAddress").value = '';
+            }
+
+            document.getElementById('sample6_postcode').value = data.zonecode;
+            document.getElementById("sample6_address").value = addr;
+            document.getElementById("sample6_detailAddress").focus();
+        }
+    }).open();
+}
+
+//휴대폰 번호 앞부분
+function checkNumber_first(value) {
+    return (/^\d{2,3}$/.test(value));
+}
+
+//휴대폰 번호 중간 부분
+function checkNumber_mid(value) {
+    return (/^\d{3,4}$/.test(value));
+}
+
+//휴대폰 번호 뒷 부분
+function checkNumber_end(value) {
+    return (/^\d{4}$/.test(value));
+}
+
+// 통신사 선택여부 확인
+function check_telecom(value) {
+    if(value === '0'){
+        return false;
+    }
+    return true;
+}
+
+function verify(){
+    phone1 = document.register.phone_part1.value;
+    phone2 = document.register.phone_part2.value;
+    phone3 = document.register.phone_part3.value;
+    telecome = document.register.phone_telecom.value
+
+    // 통신사 선택여부 확인
+    if(!check_telecom(telecome))
+    {
+        document.register.phone_telecom.focus();
+        alert('통신사를 선택해주세요');
+        return false;
+    }
+    // 휴대폰 번호 유효성 검사
+    else if(!checkNumber_first(phone1))
+    {
+        document.register.phone_part1.focus();
+        alert('휴대폰 번호 앞 부분을 형식에 맞게 작성해 주세요')
+        return false;
+    }
+    else if(!checkNumber_mid(phone2))
+    {
+        document.register.phone_part2.focus();
+        alert('휴대폰 번호 가운데 부분을 형식에 맞게 작성해 주세요');
+        return false;
+    }
+    else if(!checkNumber_end(phone3))
+    {
+        document.register.phone_part3.focus();
+        alert('휴대폰 번호 뒷 부분을 형식에 맞게 작성해 주세요');
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+{% endblock %}

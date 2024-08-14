@@ -1,0 +1,40 @@
+{% extends 'single_page/base.html' %}
+{% load widget_tweaks %}
+{% block extra-style %}
+<style>
+    .form-border {
+        border: 1px solid #d1d1d1; /* 부드러운 회색 테두리 */
+        padding: 20px;
+        border-radius: 15px; /* 더 부드러운 둥근 모서리 */
+        width: 100%;
+        max-width: 500px; /* 최대 너비 제한 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
+        background-color: #ffffff; /* 배경색을 명확하게 설정 */
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* 세로 가운데 정렬 */
+        align-items: center; /* 수평 가운데 정렬 */
+    }
+
+    .styled-hr {
+        border: 0; /* 기본 테두리 제거 */
+        height: 1px; /* 두께 설정 */
+        background-color: gray; /* 색상 설정 */
+        width: 100%; /* 너비 설정 */
+        margin: 10px 0; /* 위아래 여백 설정 */
+    }
+
+</style>
+{% endblock %}
+
+{% block main_area %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 50vh; background-color:#F5F6F8;">
+    <div class="form-border">
+        <h4 class="mb-2 text-success">회원가입이 완료되었습니다.</h4>
+        <hr class="styled-hr mb-5">
+
+        <p><a href="{% url 'login' %}">로그인하러 가기</a></p>
+    </div>
+</div>
+{% endblock %}

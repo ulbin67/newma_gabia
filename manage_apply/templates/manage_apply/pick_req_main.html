@@ -1,0 +1,57 @@
+{% extends 'single_page/base.html' %}
+{% load static %}
+
+{% block extra-style %}
+<style>
+    .warning {
+        position: relative;
+        font-size: 12px;
+        color: red;
+        padding: 5px;
+        border-radius: 4px;
+    }
+   
+    h3{
+        font-weight: 700;
+    }
+    
+</style>
+{% endblock %}
+
+{% block main_area %}
+    <div class="container">
+        <div class="row">
+            <div class="my-2">
+                <h3>요청 조회</h3>
+            </div>
+        </div>
+        <form name="box_form" action="{% url 'research' %}" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">1. 신청하신 회사명을 입력해주세요.</label>
+                    <input class="form-control" type="text" placeholder="기공소명을 입력해주세요" aria-label="company" id="company" name="company"  value="{% if user.is_authenticated %}{{request.user.company_name}}{% endif %}">
+                    <div class="warning company" style="display: block;">회사명을 정확히 작성해 주세요</div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">2. 신청자명을 입력해주세요.</label>
+                    <input class="form-control" type="text" placeholder="신청자명을 입력해주세요" aria-label="applicant" id="applicant" name="applicant"  value="{% if user.is_authenticated %}{{request.user.name}}{% endif %}">
+                    <div class="warning applicant" style="display: block;">신청자명을 정확히 작성해 주세요</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">3. 신청자 연락처를 입력해 주세요.</label>
+                    <input class="form-control" type="text" placeholder="(ex: 010-1234-1234)" aria-label="aplcan_num" id="apcan_phone" name="apcan_phone"  value="{% if user.is_authenticated %}{{request.user.phone_num}}{% endif %}">
+                    <div class="warning apcan_phone" style="display: block;">신청자 연락처를 정확히 작성해 주세요</div>
+                </div>
+                    <div class="mb-5">
+                        <div class="mt-4">
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                <button onclick= "return check_input()" class="btn btn-primary">조회하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+<script src="{% static 'js/boxes_inspect.js' %}"></script>
+{% endblock %}

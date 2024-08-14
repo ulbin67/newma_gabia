@@ -1,0 +1,97 @@
+<html lang="en">
+{% load static %}
+{% load widget_tweaks %}
+<head>
+    <meta charset="UTF-8">
+    <title>login.html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'single_page/script.JS' %}"></script>
+    <link href="{% static 'bootstrap/bootstrap.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <script src="{% static 'bootstrap/bootstrap.js' %}" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'single_page/pretendard.css' %}">
+    <link href="{% static 'bootstrap/custom.css' %}" rel="stylesheet">
+    <style>
+        .form-border {
+            border: 1px solid #d1d1d1; /* 부드러운 회색 테두리 */
+            padding: 20px;
+            border-radius: 15px; /* 더 부드러운 둥근 모서리 */
+            width: 100%;
+            max-width: 500px; /* 최대 너비 제한 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
+            background-color: #ffffff; /* 배경색을 명확하게 설정 */
+        }
+        .container {
+            padding: 20px; /* 컨테이너에 패딩 추가 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container w-100 vh-100 d-flex align-items-center justify-content-center">
+        <div class="form-border">
+        <div class="text-center mb-3">
+                <a class="navbar-brand" href="#"><img src="{% static 'image/logo.png' %}" alt="로고" width="120px"></a>
+        </div>
+        {% if form.check_id.errors %}
+        <form method="post"> {% csrf_token %}
+            <div class="text-danger">
+                {% for error in form.check_id.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class = "col-12 mb-2">
+                <input type="text" class="form-control" name="check_id">
+            </div>
+            <div class="d-flex justify-content-center">
+                <input type="submit" value="조회" class="btn btn-primary p-2">
+            </div>
+        </form>
+        {% elif is_taken == -1  %}
+        <form method="post"> {% csrf_token %}
+            <h5 class="mb-2"><strong>아이디를 입력해주세요.</strong></h5>
+            <div class="col-12 mb-2">
+                <input type="text" class="form-control" value="{{username}}" name="check_id">
+            </div>
+            <div class="d-grid">
+                <input type="submit" value="조회" class="btn btn-primary">
+            </div>
+        </form>
+        {% else %}
+        {% if is_taken == True %}
+        <form method="post"> {% csrf_token %}
+            <h5 class="mb-2 text-danger">해당 아이디({{username}})는<br> 중복됩니다.</h5>
+            <div class = "col-12 mb-2">
+                <input type="text" class="form-control" value="{{username}}" name="check_id">
+            </div>
+            <div class="d-flex justify-content-center">
+                <input type="submit" value="조회" class="btn btn-primary p-2">
+            </div>
+        </form>
+
+        {% else %}
+        <form method="post"> {% csrf_token %}
+            <h5 class="text-success">해당 아이디({{username}})는<br> 사용 가능합니다.</h5>
+            <div class = "col-12 mb-2">
+                <input type="text" class="form-control" value="{{username}}" name="check_id">
+            </div>
+            <div class="d-flex justify-content-center gap-2">
+                <input type="submit" value="조회" class="btn btn-primary p-2" >
+                <button onclick="useUsername('{{username}}')" class="btn btn-success p-2">사용하기</button>
+            </div>
+        </form>
+        {% endif %}
+        {% endif %}
+        </div>
+    </div>
+    <script>
+        function useUsername(username) {
+            if (window.opener && !window.opener.closed) {
+                window.opener.document.getElementById('id_username').value = username;
+                window.close();
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+

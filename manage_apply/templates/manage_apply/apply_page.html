@@ -1,0 +1,94 @@
+{% extends 'single_page/base.html' %}
+    {% block main_area %}
+    {% load static %}
+    <style>
+        h3{
+            font-weight: 700;
+        }
+        .section1{
+            margin-top:30px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+        .section2{
+            width:300px;
+            height: 350px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 30px;
+            margin: 0 20px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); 
+            justify-content: center;
+            align-items: center;
+            text-align: center; 
+            margin: 50px 0;
+            display:block;
+            margin: 50px;
+        }
+        a {
+            text-decoration: none; 
+            color: inherit; 
+        }
+        section .section2 p {
+            color: black;
+            font-size: 17px;
+            margin-top:5px;
+        }
+        .section2:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+        <div class="container">
+            <section>
+                <div style="text-align: center; margin: 50px 0;">
+                    <h3>수거 방법을 선택하세요.</h3>
+                </div>
+                
+                <div class="row">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+
+                        <a href="{% url 'box_apply_main' %}" class="section1">
+                            <div class="section2">
+                                <img src="{% static 'image/box.png' %}" alt="아이콘 1" style="width: 90%; height: auto;">
+                                <p><strong>박스 배송 요청</strong></p>
+                                <p>* 박스가 없을 때만 신청해주세요.</p>
+                            </div>
+                        </a>
+
+                        <a href="{% url 'sent_page' %}" class="section1">
+                            <div class="section2">
+                                <img src="{% static 'image/delivery.png' %}" alt="아이콘 2" style="width: 90%; height: auto;">
+                                <p><strong>택배 수거 요청</strong></p>
+                                <p>택배를 직접 보내셔도 됩니다.</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    {% endblock %}
+    <!-- <div class="my-5">
+                    
+        <div class="row">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                <a class="btn btn-outline-dark" href="{%url 'box_apply_main'%}" role="button">
+                    <img src="{% static '/image/box.png' %}" class="card-img-top" style="width: 200px; height: 220px;" alt="...">
+                    <h6 class="card-title">박스 배송 요청</h6>
+                    <p class="card-text">박스가 없을 때만 신청해주세요.</p>
+                </a>
+                <a class="btn btn-outline-dark"  href="{%url 'sent_page'%}" role="button">
+                    <img src="{% static '/image/delivery.png' %}" class="card-img-top" style="width: 200px; height: 220px;" alt="...">
+                    <h6 class="card-title">택배 수거 요청</h6>
+                    <p class="card-text">택배를 직접 보내셔도 됩니다.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+     -->

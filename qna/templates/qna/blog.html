@@ -1,0 +1,301 @@
+{% extends 'single_page/base.html' %}
+{% block main_area %}
+{% load static %}
+
+<!-- 외부 스타일 시트 로딩 -->
+<link rel="stylesheet" href="{% static 'single_page/pretendard.css' %}">
+
+<style>
+    .faq-detail-table {
+        width: 50%;
+        margin: 40px auto;
+        border-collapse: collapse;
+        background-color: black;
+    }
+    .faq-detail-table th, .faq-detail-table td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+    .faq-detail-table th {
+        background-color: lightgray;
+    }
+    .faq-detail-table td {
+        background-color: white;
+    }
+    h3 {
+        font-weight: 700;
+    }
+  
+
+    /* 기본 숨김 설정 */
+    /*#chatbot-container {*/
+    /*            display: none;*/
+    /*            position: fixed;*/
+    /*            bottom: 20px;*/
+    /*            right: 20px;*/
+    /*            width: 400px;*/
+    /*            height: 600px;*/
+    /*            border: 1px solid #ccc;*/
+    /*            background-color: #fff;*/
+    /*            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+    /*            z-index: 1000;*/
+    /*            border-radius: 30px;*/
+    /*            overflow: hidden;*/
+    /*}*/
+
+    /*!* 챗봇 헤더 스타일 *!*/
+    /*#chat-header {*/
+    /*    border-top-left-radius: 30px;*/
+    /*    border-top-right-radius: 30px;*/
+    /*    background-color: #fcb715;*/
+    /*    color: #fff;*/
+    /*    padding: 10px;*/
+    /*    display: flex;*/
+    /*    justify-content: space-between;*/
+    /*    align-items: center;*/
+    /*    font-weight: 700;*/
+    /*}*/
+
+
+
+    /*!* 챗봇 트리거 버튼 *!*/
+    /*#open-chatbot-btn {*/
+    /*    position: fixed;*/
+    /*    bottom: 30px;*/
+    /*    right: 40px;*/
+    /*    width : 80px;*/
+    /*    height: 80px;*/
+    /*    padding: 10px 20px;*/
+    /*    background-color: #007bff;*/
+    /*    color: #fff;*/
+    /*    font-weight: 900;*/
+    /*    border: none;*/
+    /*    border-radius: 50%;*/
+    /*    box-shadow: 7px 9px 7px rgba(0, 0, 0, 0.5);*/
+    /*    cursor: pointer;*/
+    /*    z-index: 100;*/
+    /*    font-size: 30px;*/
+    /*}*/
+
+
+    /*#open-chatbot-btn:hover {*/
+    /*    background-color: #0056b3;*/
+    /*}*/
+
+    /*!* 챗봇 닫기 버튼 *!*/
+    /*#close-chatbot-btn {*/
+    /*    background: none;*/
+    /*    border: none;*/
+    /*    color: #fff;*/
+    /*    font-size: 20px;*/
+    /*    cursor: pointer;*/
+    /*}*/
+
+    /*!* 챗 내용 박스 *!*/
+    /*#chat-box {*/
+    /*    padding: 10px;*/
+    /*    height: 481px;*/
+    /*    overflow-y: scroll;*/
+    /*    background-color: #f9f9f9;*/
+    /*}*/
+
+    /*!* 챗 메시지 스타일 *!*/
+    /*.user, .bot {*/
+    /*    padding: 8px;*/
+    /*    margin: 5px 0;*/
+    /*}*/
+
+    /*.user {*/
+    /*    background-color: #d1e7dd;*/
+    /*    text-align: right;*/
+    /*}*/
+
+    /*.bot {*/
+    /*    background-color: #f8d7da;*/
+    /*    text-align: left;*/
+    /*}*/
+
+    /*!* 입력 필드 및 버튼 스타일 *!*/
+    /*#chat-form {*/
+    /*    display: flex;*/
+    /*    justify-content: space-between;*/
+    /*    padding: 13px;*/
+    /*    background-color: #f1f1f1;*/
+    /*    */
+    /*}*/
+
+    /*#user_input {*/
+    /*    width: 80%;*/
+    /*    padding: 8px;*/
+    /*    margin-left: 20x;*/
+    /*    border: 1px solid #ccc;*/
+    /*    border-radius: 30px;*/
+    /*}*/
+
+    /*#chat-form button {*/
+    /*    padding: 8px 15px;*/
+    /*    background-color: #007bff;*/
+    /*    color: #fff;*/
+    /*    border: none;*/
+    /*    border-radius: 30px;*/
+    /*    cursor: pointer;*/
+    /*}*/
+
+    /*#chat-form button:hover {*/
+    /*    background-color: #0056b3;*/
+    /*}*/
+
+</style>
+
+<div class="mx-auto p-2" style="width: auto;">
+    <div class="d-flex justify-content-center">
+        <h3>문의사항</h3>
+    </div>
+</div>
+<form action="{% url 'qna:blog' %}" method="POST">
+    {% csrf_token %}
+    <div class="container">
+        <div class="my-3">
+            <div class="float-end">
+                <a button type="button" class="btn btn-primary"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1rem; margin-bottom: 2rem;" href="new_post/">작성</a>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">제목</th>
+                        <th scope="col">답변</th>
+                        <th scope="col">날짜</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 자주 묻는 질문 -->
+                    {% for list in faqlist %}
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📌&nbsp;</td>
+                            <td>
+                                <a href="password/{{ list.pk }}/">{{ list.postname }}</a>
+                            </td>
+                            <td>자주 묻는 질문</td>
+                            <td>{{ list.created_at }}</td>
+                        </tr>
+                    {% endfor %}
+                    <!-- 일반 질문 -->
+                    {% for list in postlist %}
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔒&nbsp;</td>
+                            <td>
+                                <a href="password/{{ list.pk }}/">{{ list.postname }}</a>
+                            </td>
+                            <td>
+                                {% if list.answer %}
+                                    답변 완료
+                                {% else %}
+                                    답변 미완료
+                                {% endif %}
+                            </td>
+                            <td>{{ list.created_at }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <!-- 페이지네이션 -->
+            <div class="d-flex justify-content-center">
+                <ul class="pagination">
+                    <!-- 이전 페이지 -->
+                    {% if postlist.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ postlist.previous_page_number }}">이전</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+                    </li>
+                    {% endif %}
+                    
+                    <!-- 페이지 번호 -->
+                    {% for page_number in postlist.paginator.page_range %}
+                        {% if page_number >= postlist.number|add:-5 and page_number <= postlist.number|add:5 %}
+                            {% if page_number == postlist.number %}
+                            <li class="page-item active" aria-current="page">
+                                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                            </li>
+                            {% else %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                            </li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+    
+                    <!-- 다음 페이지 -->
+                    {% if postlist.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ postlist.next_page_number }}">다음</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</form>
+<!--<button id="open-chatbot-btn">?</button>-->
+<!--&lt;!&ndash; 챗봇 팝업 추가 &ndash;&gt;-->
+<!--<div id="chatbot-container">-->
+<!--    <div id="chat-header">-->
+<!--        <span>&nbsp;&nbsp;&nbsp;&nbsp;🤖&nbsp;newma chatbot</span>-->
+<!--        <button id="close-chatbot-btn">&times;</button>-->
+<!--    </div>-->
+<!--    <div id="chat-box">-->
+<!--    </div>-->
+<!--    -->
+<!--    <form id="chat-form" method="post">-->
+<!--        <input type="text" id="user_input" name="user_input" placeholder="Type your message here">-->
+<!--        <button type="submit">Send</button>-->
+<!--    </form>-->
+<!--</div>-->
+
+
+<!--<script>-->
+<!--    document.getElementById('open-chatbot-btn').addEventListener('click', function() {-->
+<!--    document.getElementById('chatbot-container').style.display = 'block';});-->
+
+<!--    document.getElementById('close-chatbot-btn').addEventListener('click', function() {-->
+<!--    document.getElementById('chatbot-container').style.display = 'none';});-->
+
+<!--    document.getElementById('chat-form').onsubmit = function(e) {-->
+<!--        e.preventDefault();-->
+<!--        const userInput = document.getElementById('user_input').value;-->
+<!--        -->
+<!--        const chatBox = document.getElementById('chat-box');-->
+<!--        chatBox.innerHTML += `<div class="user">${userInput}</div>`;-->
+<!--        -->
+<!--        fetch("", {-->
+<!--            method: "POST",-->
+<!--            headers: {-->
+<!--                "X-CSRFToken": "{{ csrf_token }}",-->
+<!--                "Content-Type": "application/x-www-form-urlencoded"-->
+<!--            },-->
+<!--            body: `user_input=${encodeURIComponent(userInput)}`-->
+<!--        })-->
+<!--        .then(response => response.json())-->
+<!--        .then(data => {-->
+<!--            chatBox.innerHTML += `<div class="bot">${data.result}</div>`;-->
+<!--            chatBox.scrollTop = chatBox.scrollHeight;-->
+<!--        })-->
+<!--        .catch(error => {-->
+<!--            chatBox.innerHTML += `<div class="bot">Error: ${error.message}</div>`;-->
+<!--        });-->
+<!--        -->
+<!--        document.getElementById('user_input').value = '';-->
+<!--    };-->
+<!--</script>-->
+
+
+{% endblock %}

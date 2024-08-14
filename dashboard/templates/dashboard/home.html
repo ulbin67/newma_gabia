@@ -1,0 +1,160 @@
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script> <!-- DataLabels 플러그인 추가 -->
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Flexbox를 사용하여 표와 파이 차트를 나란히 배치 */
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        /* 표와 파이 차트의 크기를 적절히 조정 */
+        .flex-item {
+            flex: 1;
+            max-width: 45%;
+            margin: 10px;
+        }
+
+        /* 파이 차트의 크기를 설정 */
+        #usagePieChart {
+            max-width: 100%; /* 캔버스의 너비를 부모 컨테이너에 맞춤 */
+            max-height: 300px; /* 캔버스의 최대 높이 지정 */
+        }
+    </style>
+
+<body>
+    <div>
+        <h2>이용자 지도</h2>
+        <div id="map" style="width: 50%">
+            {{ map_html|safe }}
+        </div>
+
+        <h2>(총 이용자 수: {{ total_users }})</h2>
+    </div>
+
+    <div class="flex-container">
+        <div class="flex-item">
+            <h2>지역별 총 이용자 수</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>지역</th>
+                        <th>이용자 수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for region in usage_by_region %}
+                    <tr>
+                        <td>{{ region.address_info }}</td>
+                        <td>{{ region.total_count }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="flex-item">
+            <h2>지역별 이용 분포</h2>
+            <!-- 파이 차트 크기를 조정할 수 있는 캔버스 요소 -->
+            <canvas id="usagePieChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Chart.js 및 플러그인 등록
+        Chart.register(ChartDataLabels);
+
+        // 도별 이용 분포 데이터를 파이 차트로 생성
+        const usageData = {{ usage_by_region|safe }};
+        const labels = usageData.map(item => item.address_info);
+        const data = usageData.map(item => item.total_count);
+
+        const ctx = document.getElementById('usagePieChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(201, 203, 207, 0.2)',
+                        'rgba(60, 179, 113, 0.2)',
+                        'rgba(255, 215, 0, 0.2)',
+                        'rgba(199, 21, 133, 0.2)',
+                        'rgba(100, 149, 237, 0.2)',
+                        'rgba(50, 205, 50, 0.2)',
+                        'rgba(147, 112, 219, 0.2)',
+                        'rgba(244, 164, 96, 0.2)',
+                        'rgba(32, 178, 170, 0.2)',
+                        'rgba(255, 69, 0, 0.2)',
+                        'rgba(255, 20, 147, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(201, 203, 207, 1)',
+                        'rgba(60, 179, 113, 1)',
+                        'rgba(255, 215, 0, 1)',
+                        'rgba(199, 21, 133, 1)',
+                        'rgba(100, 149, 237, 1)',
+                        'rgba(50, 205, 50, 1)',
+                        'rgba(147, 112, 219, 1)',
+                        'rgba(244, 164, 96, 1)',
+                        'rgba(32, 178, 170, 1)',
+                        'rgba(255, 69, 0, 1)',
+                        'rgba(255, 20, 147, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // 비율을 유지하지 않도록 설정하여 크기 조정 가능
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    datalabels: {
+                        formatter: (value, ctx) => {
+                            let sum = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                            let percentage = (value * 100 / sum).toFixed(1) + "%";
+                            return percentage;
+                        },
+                        color: '#fff',
+                        font: {
+                            weight: 'bold',
+                            size: 12
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    <a href="/applymain/manager_infopage/" >돌아가기</a>
+</body>
+</html>

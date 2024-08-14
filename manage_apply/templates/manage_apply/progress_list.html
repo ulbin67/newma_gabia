@@ -1,0 +1,33 @@
+{% extends 'single_page/base.html' %}
+    {% block main_area %}
+    <div class="container">
+      <div class="mb-2">
+        <h4> 진행상황을 확인할 요청을 선택해주세요. </h4>
+    </div>
+      <div class="my-3">
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                    <th scope="col">신청시간</th>
+                    <th scope="col">우편번호</th>
+                    <th scope="col">박스 수</th>
+                    <th scope="col">선택</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for apply in applys %}
+                      <tr>
+                          <th scope="row">{{apply.apply_at}}</th>
+                          <td>{{apply.address_num}}</td>
+                          <td>{{apply.box_num}}</td>
+                          <td>
+                            <a class="btn btn-primary btn-sm" name="apply_id" href="{% url 'progress_check' apply.pk %}">보기</a>
+                          </td>
+                      </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+      </div>
+    </div>
+    </div>
+{% endblock %}

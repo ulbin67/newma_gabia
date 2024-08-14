@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>login.html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'single_page/script.JS' %}"></script>
+    <link href="{% static 'bootstrap/bootstrap.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <script src="{% static 'bootstrap/bootstrap.js' %}" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'single_page/pretendard.css' %}">
+    <link href="{% static 'bootstrap/custom.css' %}" rel="stylesheet">
+    <style>
+        .form-border {
+            border: 1px solid #d1d1d1; /* 부드러운 회색 테두리 */
+            padding: 20px;
+            border-radius: 15px; /* 더 부드러운 둥근 모서리 */
+            width: 100%;
+            max-width: 500px; /* 최대 너비 제한 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
+            background-color: #ffffff; /* 배경색을 명확하게 설정 */
+        }
+        .container {
+            padding: 20px; /* 컨테이너에 패딩 추가 */
+        }
+    </style>
+</head>
+<body>
+    {% if form.errors %}
+        <script>
+            alert("아이디 및 비밀번호를 확인해주세요");
+        </script>
+    {% endif %}
+    <div class="container w-100 vh-100 d-flex align-items-center justify-content-center">
+        <div class="form-border">
+            <div class="text-center mb-3">
+                <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'image/logo.png' %}" alt="로고" width="120px"></a>
+            </div>
+            <form class="form form-horizontal" role="form" action="" method="post"> {% csrf_token %}
+                <div class="form-group mb-3">
+                    <label for="username">아이디</label>
+                    <input type="text" id="username" class="form-control" name="username" placeholder="아이디를 입력해주세요">
+                </div>
+                <div class="form-group mb-4">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" class="form-control" name="password" placeholder="비밀번호를 입력해주세요.">
+                </div>
+
+                <div class="my-4">
+                    <div class="d-grid">
+                        <input type="submit" class="btn btn-secondary btn-lg" value="로그인">
+                    </div>
+                </div>
+            </form>
+            <div class="my-3 text-center">
+                <a href="{% url 'register' %}" class="link-secondary mx-2">회원가입</a>
+                <a href="{% url 'search_id' %}" class="link-secondary mx-2">아이디 찾기</a>
+                <a href="{% url 'reset_password' %}" class="link-secondary mx-2">비밀번호 찾기</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

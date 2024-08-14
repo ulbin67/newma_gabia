@@ -1,0 +1,233 @@
+{% extends 'single_page/base.html' %}
+    {% block main_area %}
+    {% if user.is_staff %}
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'ma_main' %}">거래 회사정보</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'ma_boxreq' %}">박스 요청중</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'ma_picreq' %}">수거 요청중</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'ma_picing' %}">수거중</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'ma_done' %}">수거완료</a>
+        </li>
+      </ul>
+    <form action="{% url 'ma_boxreq_edit' %}" method="POST">
+    {% csrf_token %}
+    cant}}</td>
+                          <td>{{apply.apcan_phone}}</td>
+                          <td>{{apply.address_num}}</td>
+                          <td>{{apply.address_info}} / {{apply.address_detail}}</td>
+                          <td>{{apply.deli_request}}</td>
+                          <td><div class="container-fluid">
+      <div class="my-3">
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                    <th scope="col">신청시간</th>
+                    <th scope="col">회사명</th>
+                    <th scope="col">신청자명</th>
+                    <th scope="col">연락처</th>
+                    <th scope="col">우편번호</th>
+                    <th scope="col">주소/상세주소</th>
+                    <th scope="col">배송요청사항</th>
+                    <th scope="col">전송완료</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for list in postlist %}
+                      <tr>
+                          <th scope="row">{{apply.apply_at}}</th>
+                          <td>{{apply.company}}</td>
+                          <td>{{apply.appli
+                            <div class="form-check">
+                              <input type="checkbox" name="apply_ids" value="{{ apply.pk }}">
+                            </div>
+                          </td>
+                      </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+      </div>
+      <div class="mb-5">
+        <div class="mt-4">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button onclick= "return check_input()" class="btn btn-primary">확인</button>
+            </div>
+        </div>
+    </div>
+    </div>
+  </form>
+    {% endif %}
+    {% endblock %}
+
+
+
+    
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" href = "main.css">
+        <link rel = "stylesheet" href = "modal.css">
+        <style>
+          .faq-header{
+            text-align: center;}
+          .question {
+              cursor: pointer;
+              background-color: #f9f9f9;
+              padding: 20px;
+              border: 1px solid #ddd;
+              border-radius: 5px;
+              margin-bottom: 5px;
+          }
+  
+          .question:hover {
+              background-color: #e9e9e9;
+          }
+  
+          .answer {
+              display: none;
+              padding: 10px;
+              border: 1px solid #ddd;
+              border-top: none;
+              border-bottom-left-radius: 5px;
+              border-bottom-right-radius: 5px;
+              background-color: #f9f9f9;
+          }
+          .qna-item{
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 0;
+            margin-right: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            align-items: center;
+            text-align: center;
+          }
+        </style>
+    </head>
+    <body>
+      <div class="container">
+            <header>
+                <p><a href="main.html">k동 헬스장</a></p>
+                <ul>
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="membership.html">회원가입</a></li>
+                </ul>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="center.html">센터소개</a></li>
+                    <li><a href="notice.html">공지</a></li>
+                    <li><a href="exercise.html">운동안내</a></li>
+                    <li><a href="registration.html">등록 및 결제</a></li>
+                    <li><a href="community.html">고객센터</a></li>
+                </ul>
+            </nav>
+            <section>
+                    <!-- FAQ 섹션 -->
+              <div id="faqSection" class="faq-container">
+                <div class="faq-header">
+                  <h2>FAQ</h2>
+                </div>
+                <div class="faq-search">
+                    <select>
+                      <option value="all">전체보기</option>
+                  
+                    </select>
+                    <input type="text" placeholder="검색...">
+                    <button>검색</button>
+                </div>
+              
+                <div id="qna-container">
+                  <div class="qna-item">
+                      <div class="question" onclick="toggleAnswer(this)">Q:집에 가고 싶어요.</div>
+                      <div class="answer">A: 안됩니다. </div>
+                  </div>
+                  <div class="qna-item">
+                      <div class="question" onclick="toggleAnswer(this)">Q:치킨 먹고 싶어요.</div>
+                      <div class="answer">A: 한 세트 더 하고 가세요.</div>
+                  </div>
+                  <div class="qna-item">
+                    <div class="question" onclick="toggleAnswer(this)">Q:사이트에 왜 버그가 많나요?</div>
+                    <div class="answer">A:ㅠㅠ 항상 최선을 다하는 K동 헬스장이 되겠습니다.</div>
+                </div>
+                <div class="qna-item">
+                    <div class="question" onclick="toggleAnswer(this)">Q:운동기구는 몇 개 있나요?</div>
+                    <div class="answer">A:3개 있습니다. </div>
+                </div>
+              </div>
+
+              <script>
+                  function toggleAnswer(element) {
+                      // element는 클릭된 질문에 대한 참조입니다
+                      var answer = element.nextElementSibling; // 질문 다음 요소는 답변입니다
+
+                      // 답변의 표시 상태를 토글합니다
+                      if (answer.style.display === "block") {
+                          answer.style.display = "none";
+                      } else {
+                          answer.style.display = "block";
+                      }
+                  }
+              </script>
+
+                <!-- 페이지네이션 -->
+                <!-- <div class="pagination">
+                  <a href="#">&lt;</a>
+                  <a href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">&gt;</a>
+                </div>
+              </div> -->
+
+                </section>
+              
+                    </div>
+                </article>
+            </div>
+           
+        </div>
+    </body>
+</html>
+{% extends 'single_page/base.html' %}
+    {% block main_area %}
+    {%load static%}
+<body>
+    <h1>글쓰기 페이지</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">제목</label>
+            <input class="form-control" type="text" aria-label="aplcan_num" name="postname">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+            <input class="form-control" type="text" aria-label="aplcan_num" name="postname">
+        </div>
+        <input type="file" name="mainphoto"><br>
+        <input type="submit" value="등록">
+    </form>
+</body>
+{% endblock %}
+
+
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">2. 회사 연락처를 입력해 주세요. (*선택)</label>
+  <input class="form-control" type="text"  aria-label="com_num" id="com_num" name="com_num">
+  <div class="warning com_num" style="display: none;">적절한 전화번호 형식이 아닙니다.(형식예시: 041-000-0000)</div>
+</div>
+
+
+

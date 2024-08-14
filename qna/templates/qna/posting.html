@@ -1,0 +1,63 @@
+{% extends 'single_page/base.html' %}
+    {% block main_area %}
+    {%load static%}
+    <head>
+        <title>Posting!</title>
+        <style>
+        .height-custom {
+            height: 300px; /* 원하는 높이 값으로 설정 */
+            overflow-y: auto; /* 내용이 넘칠 경우 스크롤바 표시 */
+        }
+        h3{
+            font-weight: 700;
+        }
+        </style>
+        <link rel = "stylesheet" href = "{%static 'single_page/pretendard.css' %}">
+    </head>
+    <body>
+        <div class="mx-auto p-2" style="width: auto;">
+            <div class="d-flex justify-content-center">
+                <h3>게시물</h3>
+            </div>
+        </div>
+        <div class="container">
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">제목</label>
+                <div class="form-control" type="text" aria-label="aplcan_num" name="password">{{post.postname}}</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">문의내용</label>
+                <div class="form-control height-custom" type="text" aria-label="aplcan_num" name="password">
+                     <!-- 이미지 보여주기 -->
+                     {% if post.mainphoto %}
+                     <img src = "{{ post.mainphoto.url }}" alt="" height="300">
+                     {% endif %}
+                     <br>{{post.contents}}
+                </div>
+            </div>
+            <div class="mb-3">
+                {%if not post.is_faq%}
+                <label for="exampleFormControlTextarea1" class="form-label">답변</label>
+                    {%if list.answer%}
+                    <div class="form-control" type="text" aria-label="aplcan_num" name="password">{{post.answer}}</div>
+                    {%else%}
+                    <div class="form-control" type="text" aria-label="aplcan_num" name="password">답변미완료</div>
+                    {%endif%}
+                {%endif%}
+            </div>
+            <div class="d-flex flex-row-reverse">
+                <a button type="button" class="btn btn-primary p-2"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1rem;" href="/qna/">목록</a>
+                <div class="p-2"></div>
+                {% if not post.is_faq or user.is_staff%}
+                <a button type="button" class="btn btn-primary p-2"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1rem;" href="/qna/{{post.pk}}/remove">삭제</a>
+                {%endif%}
+            </div>
+            <div class="d-flex flex-row-reverse">
+                <div class="p-2"></div>
+            </div>
+            <table class="table table-hover"></table>
+        </div>
+    </body>
+{% endblock %}

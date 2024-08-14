@@ -1,0 +1,24 @@
+{% extends 'single_page/base.html' %}
+    {% block main_area %}
+    <div class="container">
+        <div class="mb-3">
+            <div class="mx-5">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="my-2">
+                            <p class="text-center">해당 요청이 존재하지 않습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-5">
+            <div class="mt-4">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <a class="btn btn-primary" type="button" href="{%url 'apply_page'%}" >신청하러 가기</a>
+                    <a class="btn btn-primary" type="button" href="{%url 'progress_research'%}" >다시 조회하기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

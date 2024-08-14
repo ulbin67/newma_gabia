@@ -1,0 +1,115 @@
+{% extends 'single_page/base.html' %}
+{% block main_area %}
+{% if user.is_staff %}
+<div class="container">
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end"><h5><a class="badge rounded-pill text-bg-danger text-wrap"  href="{% url 'info_call' %}" style="width: auto;">거래 정보 보기</a></h5></div>
+</div>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'ma_main' %}">거래 회사정보</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'ma_boxreq' %}">박스 요청중</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'ma_picreq' %}">수거 요청중</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'upload_file_page' %}">송장파일 입력</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'ma_picing' %}">수거중</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'ma_done' %}">수거완료</a>
+    </li>
+</ul>
+<form action="{% url 'ma_boxreq_edit' %}" method="POST">
+{% csrf_token %}
+<div class="container-fluid">
+  <div class="my-3">
+      <table class="table table-hover">
+          <thead>
+            <tr>
+                <th scope="col">신청시간</th>
+                <th scope="col">회사명</th>
+                <th scope="col">신청자명</th>
+                <th scope="col">연락처</th>
+                <th scope="col">우편번호</th>
+                <th scope="col">주소/상세주소</th>
+                <th scope="col">배송요청사항</th>
+                <th scope="col">전송완료</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for apply in page_obj %}
+                  <tr>
+                      <th scope="row">{{ apply.apply_at }}</th>
+                      <td>{{ apply.company }}</td>
+                      <td>{{ apply.applicant }}</td>
+                      <td>{{ apply.apcan_phone }}</td>
+                      <td>{{ apply.address_num }}</td>
+                      <td>{{ apply.address_info }} / {{ apply.address_detail }}</td>
+                      <td>{{ apply.deli_request }}</td>
+                      <td>
+                        <div class="form-check">
+                          <input type="checkbox" name="apply_ids" value="{{ apply.pk }}">
+                        </div>
+                      </td>
+                  </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+      <div class="d-flex justify-content-center">
+        <ul class="pagination">
+            <!-- 이전페이지 -->
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">이전</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+            </li>
+            {% endif %}
+            
+            <!-- 페이지 번호 -->
+            {% for page_number in page_obj.paginator.page_range %}
+                {% if page_number >= page_obj.number|add:-5 and page_number <= page_obj.number|add:5 %}
+                    {% if page_number == page_obj.number %}
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                    </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+
+            <!-- 다음페이지 -->
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}">다음</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+            </li>
+            {% endif %}
+        </ul>
+        <!-- 페이징처리 끝 -->
+    </div>         
+  </div>
+  <div class="mb-5">
+    <div class="mt-4">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button onclick="return check_input()" class="btn btn-primary">확인</button>
+        </div>
+    </div>
+  </div>
+</div>
+</form>
+{% endif %}
+{% endblock %}

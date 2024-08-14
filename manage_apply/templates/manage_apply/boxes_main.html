@@ -1,0 +1,241 @@
+{% extends 'single_page/base.html' %}
+{% load static %}
+
+{% block extra-style %}
+<style>
+    .warning {
+        position: relative;
+        font-size: 12px;
+        color: red;
+        padding: 5px;
+        border-radius: 4px;
+    }
+
+    .title {
+        font-size: 25px;
+        color: royalblue;
+        font-weight: 600;
+        letter-spacing: -1px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+    }
+
+    .title::before, .title::after {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        left: 0;
+        background-color: royalblue;
+    }
+
+    .title::before {
+        width: 18px;
+        height: 18px;
+        background-color: royalblue;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1); /* 원래 크기 */
+            opacity: 0.7; /* 완전히 불투명 */
+        }
+        30% {
+            transform: scale(1.3); /* 크기 120% */
+            opacity: 0.6; /* 반투명 */
+        }
+        50% {
+            transform: scale(1.5); /* 크기 120% */
+            opacity: 0.5; /* 반투명 */
+        }
+        70% {
+            transform: scale(1.3); /* 크기 120% */
+            opacity: 0.6; /* 반투명 */
+        }
+        100% {
+            transform: scale(1); /* 원래 크기로 복귀 */
+            opacity: 0.7; /* 완전히 불투명 */
+        }
+    }
+
+    .title::after {
+        width: 18px;
+        height: 18px;
+        background-color: royalblue;
+        animation: pulse 1s linear infinite;
+    }
+    
+</style>
+{% endblock %}
+
+{% block main_area %}
+    <div class="container">
+        <h3 class="title">상자 신청</h3>
+        <div class="row">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                {% if user.is_authenticated %}
+                <!-- 로그인 시, 요청 선택페이지로 넘어가야함 -->
+                <a class="btn btn-outline-btn btn-outline-danger" href="{% url 'research_call' %}" role="button">상자는 이미 받았고, 다시 수거해주세요</a>
+                {% else %}
+                <a class="btn btn-outline-btn btn-outline-danger" href="{% url 'research_call' %}" role="button">상자는 이미 받았고, 다시 수거해주세요</a>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">상자 신청 시 주의사항</label>
+                <div class="card">
+                    <div class="card-body">
+                        * 박스의 2/3만 채워서 보내주세요.
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <h4>해당 아래의 내용을 작성하시면 택배박스와 비닐을 보내드립니다. </h4>
+            </div>
+        </div>
+        <form name="box_form" action="{% url 'box_apply_create' %}" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">1. 신청하시는 회사명을 입력해 주세요.</label>
+                    <input class="form-control" type="text" aria-label="company" id="company" name="company" value="{% if user.is_authenticated %}{{request.user.company_name}}{% endif %}">
+                    <div class="warning company" style="display: block;">회사명을 확인해 주세요</div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">2. 회사 연락처를 입력해 주세요. (*선택)</label>
+                    <input class="form-control" type="text"  aria-label="com_num" id="com_num" name="com_num">
+                    <div class="warning com_num" style="display: none;">적절한 전화번호 형식이 아닙니다.(형식예시: 041-000-0000)</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">3. 담당자 성함을 입력해 주세요.</label>
+
+                    <input class="form-control" type="text" aria-label="applicant" id="applicant" name="applicant"
+                           value="{% if user.is_authenticated %}{{request.user.name}}{% endif %}">
+
+                    <div class="warning applicant" style="display: block;">신청자명을 확인해 주세요</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">4. 담당자 연락처를 입력해 주세요.</label>
+                    <input class="form-control" type="text" aria-label="aplcan_num" id="apcan_phone" name="apcan_phone" value="{% if user.is_authenticated %}{{request.user.phone_num}}{% endif %}">
+                    <div class="warning apcan_phone" style="display: block;">적절한 연락처 형식이 아닙니다.(형식예시: 010-0000-0000)</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">5. 박스를 보낼 주소를 입력해 주세요.</label>
+                        <div class="mb-3">
+                            <div class="col">
+                                <input type="text" id="sample6_postcode" placeholder="우편번호" name="sample6_postcode" readonly="readonly" value="{% if user.is_authenticated %}{{request.user.address_num}}{% endif %}">
+                                <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-4">
+                                    <input class="form-control" type="text" id="sample6_address" placeholder="주소" name="sample6_address" readonly="readonly" value="{% if user.is_authenticated %}{{request.user.address_info}}{% endif %}">
+                                </div>
+                                <div class="col-4">
+                                    <input class="form-control" type="text" id="sample6_detailAddress" placeholder="상세주소" name="sample6_detailAddress" value="{% if user.is_authenticated %}{{request.user.address_detail}}{% endif %}">
+                                    <div class="warning sample6_detailAddress" style="display: block;">상세주소를 확인해 주세요</div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="mb-3">
+                            <textarea class="form-control" id="sample6_extraAddress" placeholder="세부사항 및 요청사항" rows="3" name="sample6_extraAddress"></textarea>
+                    </div>
+                        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+                        <script>
+                            function sample6_execDaumPostcode() {
+                                new daum.Postcode({
+                                    oncomplete: function(data) {
+                                        // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                                        // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                                        // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                                        var addr = ''; // 주소 변수
+                                        var extraAddr = ''; // 참고항목 변수
+
+                                        //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                                        if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                                            addr = data.roadAddress;
+                                        } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                                            addr = data.jibunAddress;
+                                        }
+
+                                        // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                                        if(data.userSelectedType === 'R'){
+                                            // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                                            // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                                            if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                                                extraAddr += data.bname;
+                                            }
+                                            // 건물명이 있고, 공동주택일 경우 추가한다.
+                                            if(data.buildingName !== '' && data.apartment === 'Y'){
+                                                extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                                            }
+                                            // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                                            if(extraAddr !== ''){
+                                                extraAddr = ' (' + extraAddr + ')';
+                                            }
+                                            // 조합된 참고항목을 해당 필드에 넣는다.
+                                            document.getElementById("sample6_extraAddress").value = extraAddr;
+
+                                        } else {
+                                            document.getElementById("sample6_extraAddress").value = '';
+                                        }
+
+                                        // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                                        document.getElementById('sample6_postcode').value = data.zonecode;
+                                        document.getElementById("sample6_address").value = addr;
+                                        // 커서를 상세주소 필드로 이동한다.
+                                        document.getElementById("sample6_detailAddress").focus();
+                                    }
+                                }).open();
+                            }
+                        </script>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">5. 박스 수를 선택해주세요.</label>
+                        <div class="row">
+                            <div class="col-3">
+                                <select class="form-select" aria-label="Default select example" id="box_num" name="box_num">
+                                    <option value="0" selected>박스 수 선택</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="warning box_num" style="display: block;">박스 개수를 선택해 주세요</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">6. 개인정보 수집 및 이용 동의</label>
+                        <div class="card">
+                            <div class="card-body">
+                            개인정보 이용 동의 설명
+
+                            <hr>
+                            <div class="form-check-center">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    개인정보 수집 및 이용에 동의합니다.
+                                </label>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <div class="mt-4">
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                <button onclick= "return check_input()" class="btn btn-primary">신청하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+<script src="{% static 'js/boxes_inspect.js' %}"></script>
+{% endblock %}

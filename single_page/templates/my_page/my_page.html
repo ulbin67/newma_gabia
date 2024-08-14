@@ -1,0 +1,127 @@
+{% extends 'single_page/base.html' %}
+{% load widget_tweaks %}
+
+{% block extra-style %}
+<style>
+    .border {
+        background-color: white;
+        border-radius: 10px;
+        padding: 40px 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        margin-top: 20px;
+        border: 1px solid black;
+    }
+    .menu-bar {
+        position: sticky;
+        top: 0;
+        background-color: #f8f9fa;
+        z-index: 1000;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    .menu-bar a {
+        margin-right: 15px;
+    }
+
+    .border2 {
+        border: 1px solid black;
+        padding: 20px;
+        border-radius: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block main_area %}
+{% if form.errors %}
+    <script>
+        alert("비밀번호가 일치하지 않습니다.");
+    </script>
+{% endif %}
+<div class="container mt-2">
+    <!-- 메뉴바 -->
+    <div class="menu-bar d-flex justify-content-start">
+        <a href="#content1" class="nav-link p-2" onclick="showContent('content1')">거래조회</a>
+        <a href="#content2" class="nav-link p-2" onclick="showContent('content2')">문의사항</a>
+        <a href="#content3" class="nav-link p-2" onclick="showContent('content3')">회원정보 관리</a>
+        <a href="#content4" class="nav-link p-2" onclick="showContent('content4')">비밀번호 수정</a>
+        <a href="#content5" class="nav-link p-2" onclick="show_warning()">회원 탈퇴</a>
+    </div>
+
+    <!-- 콘텐츠 영역 -->
+    <div id="content1" class="border">
+        <h4>거래조회</h4>
+        <p>입력해주세요</p>
+    </div>
+
+
+    <div id="content2" class="border" style="display: none;">
+        <h4>문의사항</h4>
+        <p>입력해주세요</p>
+    </div>
+
+
+    <div id="content3" class="border" style="display: none;">
+        <div class ="col-6 mx-auto">
+            <div class="row text-center mb-3">
+                <h4>회원정보 관리</h4>
+            </div>
+            <p class="text-center mb-3">개인정보 보호를 위해 비밀번호를 입력해주세요</p>
+            <form class="border2" action="" method="post"> {% csrf_token %}
+                <input type="hidden" name="form_name" value="info">
+               <div class="row text-center mb-3">
+                    <p>현재 아이디 : {{request.user.username}}</p>
+               </div>
+                <div class="col-12">
+                    {{form.confirm_password|add_class:"form-control"|attr:"placeholder=비밀번호"}}
+                </div>
+                <div class="my-4">
+                    <div class="d-grid">
+                        <input type="submit" class="btn btn-secondary btn-lg" value="확인">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="content4" class="border" style="display: none;">
+        <div class ="col-6 mx-auto">
+            <div class="row text-center mb-3">
+                <h4>비밀번호 수정</h4>
+            </div>
+            <p class="text-center mb-3">개인정보 보호를 위해 비밀번호를 입력해주세요</p>
+            <form class="border2" action="" method="post"> {% csrf_token %}
+                <input type="hidden" name="form_name" value="psw">
+               <div class="row text-center mb-3">
+                    <p>현재 아이디 : {{request.user.username}}</p>
+               </div>
+                <div class="col-12">
+                    {{form.confirm_password|add_class:"form-control"|attr:"placeholder=비밀번호"}}
+                </div>
+                <div class="my-4">
+                    <div class="d-grid">
+                        <input type="submit" class="btn btn-secondary btn-lg" value="확인">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showContent(contentId) {
+        // 모든 콘텐츠 숨기기
+        document.getElementById('content1').style.display = 'none';
+        document.getElementById('content2').style.display = 'none';
+        document.getElementById('content3').style.display = 'none';
+        document.getElementById('content4').style.display = 'none';
+        // 클릭한 콘텐츠만 보이게 설정
+        document.getElementById(contentId).style.display = 'block';
+    }
+    function show_warning(){
+     window.open("{% url 'delete_before' %}",
+    "회원 탈퇴",
+    "left=700,top=200,width=400,height=450,scrollbars=no,resizable=yes");
+    }
+</script>
+{% endblock %}

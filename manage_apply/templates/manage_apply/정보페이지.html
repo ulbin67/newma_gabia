@@ -1,0 +1,137 @@
+{% extends 'single_page/base.html' %}
+{% block extra-style %}
+<style>
+    .date-field {
+        margin-bottom: 5px;  /* 하단 마진 조정 */
+        padding: 5px;  /* 패딩 조정 */
+    }
+
+    .chart-field {
+        margin-bottom: 5px; /* 하단 마진 조정 */
+        padding: 5px; /* 패딩 조정 */
+    }
+
+    .table-responsive {
+        overflow-x: auto;  /* 가로 스크롤 추가 */
+    }
+
+    table {
+        width: 100%;  /* 테이블이 컨테이너의 전체 너비를 차지하도록 설정 */
+        border-collapse: collapse;  /* 테이블 테두리와 셀 테두리를 결합 */
+    }
+
+    th, td {
+        border: 1px solid #ddd;  /* 테이블 셀의 테두리 설정 */
+        padding: 8px;  /* 셀 내부 여백 설정 */
+        text-align: left;  /* 텍스트를 왼쪽 정렬 */
+    }
+
+    th {
+        background-color: #f2f2f2;  /* 헤더 배경색 설정 */
+    }
+
+</style>
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block main_area %}
+{% if user.is_staff %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <div id="list-example" class="list-group">
+                <a class="list-group-item list-group-item-action" href="#list-item-1">회사별 거래 횟수</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-2">박스 수 정보</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-3">거래 회사 검색</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-4">박스 수 정보</a>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="card">
+                <div class="card-body">
+                    <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                        <!-- 회사별 거래 횟수 -->
+                        <h4 id="list-item-1">지역별 거래 확인</h4>
+                        <div class="container">
+                            <div class="row">
+                                <a type="button" class="btn btn-outline-success" href="/dashboard/"
+                                style="--bs-btn-padding-y: .60rem; --bs-btn-padding-x: .9rem; --bs-btn-font-size: $font-size-base * 5;">
+                                거래 위치 정보 보기!
+                                </a> 
+                            </div>
+                            <hr>
+                            <!-- 회사별 거래 확인 -->
+                            <h4 id="list-item-2">회사별 거래 확인</h4>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <canvas id="PieChart1"></canvas>
+                                    </div>
+                                    <form class="col-3" action="" method="post">
+                                        {% csrf_token %}
+                                        {{ search_form|crispy }}
+                                        <button class="btn btn-primary mt-3" type="submit" name="search_submit">Search</button>
+                                    </form>
+                                    {% if apply_df %}
+                                        <hr>
+                                        <b>Chart</b>
+                                        <img src="data:image/png;base64, {{ chart|safe }}" alt="" id="img">
+                                    {% endif %}
+                                </div>
+                                <hr>
+                                <!-- 거래 회사 정보 검색 -->
+                                <h4 id="list-item-3">거래 회사 정보 검색</h4>
+                                <form class="col-3" action="" method="post">
+                                    {% csrf_token %}
+                                    {{ company_info_form|crispy }}
+                                    <button class="btn btn-primary mt-3" type="submit" name="company_info_submit">Search</button>
+                                </form>
+                                {% if company_df %}
+                                    <hr>
+                                    <b>거래 정보</b>
+                                    <div class="table-responsive">
+                                        {{ company_df|safe }}
+                                    </div>
+                                {% endif %}
+                                {% if user_df %}
+                                    <b>회원 정보</b>
+                                    <div class="table-responsive">
+                                        {{ user_df|safe }}
+                                    </div>
+                                    <hr>
+                                {% endif %}
+                                <br>
+                            </div>
+                            <hr>
+                            <!-- 박스 수 예측 -->
+                            <h4 id="list-item-4">박스 수 예측</h4>
+                            <div class="container">
+                                <h5>이번년도만 포함됩니다.</h5>
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">날짜</th>
+                                      <th scope="col">박스 수</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    {% for item in month_box_data %}
+                                    <tr>
+                                        <th scope="row">{{ item.label }}</th>
+                                        <td>{{ item.box_num }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                  </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

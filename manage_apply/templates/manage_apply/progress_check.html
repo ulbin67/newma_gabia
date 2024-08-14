@@ -1,0 +1,73 @@
+{% extends 'single_page/base.html' %}
+    {% block main_area %}
+    <div class="container">
+        <div class="my-3">
+            <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+                {% if apply.progress == 0 %}
+                    <div class="progress-bar" style="width: 0%"></div>
+                {% elif apply.progress == 1 %}
+                    <div class="progress-bar" style="width: 25%"></div>
+                {% elif apply.progress == 2 %}
+                    <div class="progress-bar" style="width: 50%"></div>
+                {% else %}
+                    <div class="progress-bar" style="width: 75%"></div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="my-5">
+            <div class="mx-5">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="my-2">
+                            {% if apply.progress == 0 %}
+                                <h5>상자 요청을 확인 전입니다.</h5>
+                                <hr>
+                                <p>확인을 기다려주세요.</p>
+                            {% elif apply.progress == 1 %}
+                                <h5>상자를 보내는 중입니다.</h5>
+                                <hr>
+                                <p>상자 수거를 원하시면 상자 신청 페이지 오른쪽 위 버튼을 눌러주세요.</p>
+                                <p>배송 현황을 확인하시려면 아래 버튼을 눌러주세요.</p>
+                            {% elif apply.progress == 2 %}
+                                <h5>상자 수거 요청 확인 전입니다.</h5>
+                                <hr>
+                                <p>확인을 기다려주세요.</p>
+                            {% elif apply.progress == 3 %}
+                                <h5>수거중입니다.</h5>
+                                <hr>
+                                <p>
+                                    배송 현황을 확인하시려면 아래 버튼을 눌러주세요.
+                                    아래 버튼 클릭 시, 송장 번호가 입력되지 않았다고 뜰 경우, 사장님께 문의해주세요.
+                                </p>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                                    <button class="btn btn-dark" onclick="openNewWindow()">배송 조회하기</button>
+                                </div>
+                                <script>
+                                    function openNewWindow() {
+                                        window.open("https://mdm.alps.llogis.com:18200/openui/mdm/pages/mo/MoBef?inv={{apply.invoice_num}}&empno=31705947", '_blank', 'width=800,height=600');
+                                    }
+                                </script>
+                            {% else %}
+                                <h5>송장 출력 전입니다.</h5>
+                                <hr>
+                                <p>
+                                    확인을 기다려주세요.
+                                </p>
+                            {% endif %}
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <div class="mt-4">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <a class="btn btn-primary" type="button" href="/project/newma_repo/manage_apply/static" >돌아가기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

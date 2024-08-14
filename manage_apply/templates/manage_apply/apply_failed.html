@@ -1,0 +1,23 @@
+{% extends 'single_page/base.html' %}
+    {% block main_area %}
+    <div class="container">
+        <div class="mb-3">
+            <div class="mx-5">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="my-2">
+                            <p class="text-center">요청 거부되었습니다. 요청 정보를 확인하세요.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-5">
+            <div class="mt-4">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <a class="btn btn-primary" type="button" href="/applymain/" >돌아가기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
