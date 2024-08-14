@@ -42,6 +42,8 @@ ALLOWED_HOSTS = [
     ".newmakorea.com",
     'localhost',
     '127.0.0.1',
+    '117.52.84.176',
+    '.youngwon.site',
 ]
 
 
