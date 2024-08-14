@@ -1,11 +1,5 @@
-import os
-import numpy as np
-import pandas as pd
 from datetime import datetime
-import joblib
-from .models import DoneApply, Apply
-from django.conf import settings
-from django.db.models import Sum
+from .models import DoneApply
 
 def 달별박스수계산():
     done_applies = DoneApply.objects.all()

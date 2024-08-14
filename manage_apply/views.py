@@ -1,15 +1,11 @@
-from django.http import HttpResponse
 from django.http import FileResponse
 from django.conf import settings
-from django.shortcuts import render, redirect
 from .models import Apply, CompanyInfo, DoneApply
 from single_page.models import User
 from django.core.files.storage import FileSystemStorage
-import re
 from .utils import get_chart
 from django.contrib import messages
 from .forms import ApplySearchForm, ApplyForm
-import pandas as pd
 from django.db.models import Q
 from django.utils import timezone
 import pandas as pd
