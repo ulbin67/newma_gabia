@@ -5,6 +5,7 @@ db.sqlite3-journal
 media
 .idea
 *.pyc
+venv
 
 #시크릿 키 설정
 secrets.json

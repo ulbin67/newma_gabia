@@ -33,7 +33,7 @@ NAVER_CLIENT_SECRET = get_secret('NAVER_CLIENT_SECRET')
 
 #디버그 비허용시 static 자동 연결 해제됨
 #서버 설정으로 다시 연결 필요
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     # 사용 DNS 설정
@@ -99,7 +99,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "main_.wsgi.application"
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -136,9 +135,10 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
-##static 파일들의 경로 설정
+
+#static 파일들의 경로 설정
 #static을 읽어들일 경우, URL -> static 파일에 접근 시, 자동으로 붙는 URL
 #ex: http://example/static/이미지.jpg
 #root는 읽어들일 때의 경로... (중요함..)
