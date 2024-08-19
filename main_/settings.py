@@ -77,7 +77,16 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'django.middleware.cache.UpdateCacheMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
 ]
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
 
 ROOT_URLCONF = "main_.urls"
 
@@ -166,3 +175,6 @@ EMAIL_HOST_USER = 'lka111617@gmail.com'                 # 발신할 이메일
 EMAIL_HOST_PASSWORD = 'zruk ydku fdsy fsrs'                       # 발신할 메일의 비밀번호
 EMAIL_USE_TLS = True                                    # TLS 보안 방법
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER                    # 사이트와 관련한 자동응답을 받을 이메일 주소
+
+SESSION_COOKIE_AGE = 14400
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
