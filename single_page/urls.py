@@ -7,6 +7,8 @@ urlpatterns = [
     path("introduce_newma/", views.introcall),
     path("information_newma/",views.infocall),
 
+    path("rule/", views.rule.as_view(), name="rule"),
+
     path("accounts/", include('django.contrib.auth.urls')),
 
     # localhost/accounts/register : 회원가입

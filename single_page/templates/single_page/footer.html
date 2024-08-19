@@ -1,45 +1,86 @@
-<footer class="pt-4 bg-secondary">
-        <div class="container">
-                <div class="row row-cols-3-no-gutters">
-                  <div class="col float-start">
-                    <p class="small fw-lighter text-light">
-                        뉴마
-                    </p>
-                    </div>
-                  <div class="col float-start">
-                    <p class="small fw-lighter text-white">
-                        문의 010 - 8815 - 3164
-                    </p>
-                    </div>
-                  <div class="col-6"></div>
-                </div>
+<!--<footer class="pt-4 bg-secondary">-->
+<!--        <div class="container">-->
+<!--                <div class="row row-cols-3-no-gutters">-->
+<!--                  <div class="col float-start">-->
+<!--                    <p class="small fw-lighter text-light">-->
+<!--                        회사명 : (주)뉴마-->
+<!--                    </p>-->
+<!--                  </div>-->
+<!--                  <div class="col float-start">-->
+<!--                    <p class="small fw-lighter text-white">-->
+<!--                        문의 010 - 8815 - 3164-->
+<!--                    </p>-->
+<!--                    </div>-->
+<!--                  <div class="col-6"></div>-->
+<!--                </div>-->
 
-                <div class="row row-cols-3-no-gutters">
-                    <div class="col fw-lighter float-start">
-                        <p class="small text-white">
-                            사업자등록번호: 731 - 81 - 03279
-                        </p>
-                    </div>
-                    <div class="col fw-lighter float-start">
-                        <p class="small text-white">
-                            주소: 천안시 동남구 수신면 해정1길 51-22
-                        </p>
-                    </div>
-                    <div class="col-6"></div>
-                </div>
+<!--                <div class="row row-cols-3-no-gutters">-->
+<!--                    <div class="col fw-lighter float-start">-->
+<!--                        <p class="small text-white">-->
+<!--                            사업자등록번호: 731 - 81 - 03279-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                    <div class="col fw-lighter float-start">-->
+<!--                        <p class="small text-white">-->
+<!--                            주소: 천안시 동남구 수신면 해정1길 51-22-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                    <div class="col-6"></div>-->
+<!--                </div>-->
 
-                <div class="row row-cols-3-no-gutters">
-                    <div class="col fw-lighter float-start">
-                        <p class="small text-white">
-                            대표자: 박성수
-                        </p>
-                    </div>
-                    <div class="col fw-lighter float-start">
-                        <p class="small text-white">
-                            e-mail: dnforl2004@naver.com
-                        </p>
-                    </div>
-                    <div class="col-6"></div>
-                </div>
+<!--                <div class="row row-cols-3-no-gutters">-->
+<!--                    <div class="col fw-lighter float-start">-->
+<!--                        <p class="small text-white">-->
+<!--                            대표자: 박성수-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                    <div class="col fw-lighter float-start">-->
+<!--                        <p class="small text-white">-->
+<!--                            e-mail: dnforl2004@naver.com-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                    <div class="col-6"></div>-->
+<!--                </div>-->
+<!--        </div>-->
+<!--</footer>-->
+<style>
+    .custom-footer {
+    background-color: #343a40; /* 다크 그레이 배경색 */
+    color: darkgray; /* 밝은 회색 텍스트 색상 */
+    padding: 20px 0; /* 위아래 패딩 */
+}
+
+.custom-footer .custom-link {
+    color: darkgray; /* 링크 색상: 밝은 회색 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+}
+
+.custom-footer .custom-link:hover {
+    text-decoration: underline; /* 마우스 오버 시 링크에 밑줄 추가 */
+}
+
+.custom-footer p {
+    font-size: 0.875rem; /* 폰트 사이즈 줄이기 */
+}
+</style>
+
+<footer class="custom-footer">
+    <div class="text-center">
+        <!-- 개인정보 취급방침 링크 -->
+        <div class="mb-3">
+            <p>
+                <a href="{% url 'rule' %}" class="custom-link">
+                    개인정보 취급방침
+                </a>
+            </p>
         </div>
+        <!-- 회사 정보 및 연락처 -->
+            <p class="mb-1">
+                회사명: <strong>(주) 뉴마</strong> / 대표: 박성수 / 사업자등록번호: 731 - 81 - 03279
+            </p>
+            <p class="mb-1">
+                소재지: 천안시 동남구 수신면 해정1길 51-22 / 전화: 010-8815-3164 / 이메일: dnforl2004@naver.com
+            </p>
+            <p class="mb-0">&copy; 2024 (주) 뉴마. 모든 권리 보유.</p>
+    </div>
 </footer>

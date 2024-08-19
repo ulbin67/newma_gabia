@@ -32,11 +32,41 @@ def infocall(request):
         'single_page/information.html'
     )
 
+class rule(TemplateView):
+    template_name = 'single_page/rule.html'
+
 # 회원가입
 class UserCreateView(CreateView):                   # 새로운 레코드 생성을 위해 CreateView 상속
     template_name = 'registration/register.html'
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('register_done')     # 폼에 에러가 없고 테이블 생성이 완료된 경우 회원가입 성공 페이지로 이동
+
+    def form_valid(self, form):
+        action = self.request.POST.get('action')
+
+        # 1단계: 인증 코드 전송
+        if action == 'send_code':
+            phone_number = f"{form.cleaned_data.get('phone_part1')}-{form.cleaned_data.get('phone_part2')}-{form.cleaned_data.get('phone_part3')}"
+            self.send_verification_code(phone_number)
+
+        # 2단계: 인증 코드 검증 및 회원가입 완료
+        elif action == 'verify_code':
+            verification_code = form.cleaned_data.get('verify_code')
+            if verification_code == form.expected_code():
+                user = form.save(commit=False)
+                user.is_phone_verified = True
+                user.save()
+                return redirect(self.success_url)
+            else:
+                form.add_error('verification_code', 'Invalid verification code.')
+                return self.form_invalid(form)
+
+        return super().form_valid(form)
+
+    def send_verification_code(self, phone_number):
+        print(f"Sending verification code to {phone_number}")
+        # 실제 문자인증 코드 전송 로직 추가 (예: 외부 API 호출)
+        pass
 
     # 폼에서 유효성 검사를 만족하지 못한 경우
     def form_invalid(self, form):

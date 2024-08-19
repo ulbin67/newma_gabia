@@ -33,7 +33,7 @@ NAVER_CLIENT_SECRET = get_secret('NAVER_CLIENT_SECRET')
 
 #디버그 비허용시 static 자동 연결 해제됨
 #서버 설정으로 다시 연결 필요
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     # 사용 DNS 설정
