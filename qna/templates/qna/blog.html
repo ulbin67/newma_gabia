@@ -26,7 +26,7 @@
     h3 {
         font-weight: 700;
     }
-  
+
 
     /* 기본 숨김 설정 */
     /*#chatbot-container {*/
@@ -147,104 +147,105 @@
     /*}*/
 
 </style>
-
-<div class="mx-auto p-2" style="width: auto;">
-    <div class="d-flex justify-content-center">
-        <h3>문의사항</h3>
-    </div>
-</div>
-<form action="{% url 'qna:blog' %}" method="POST">
-    {% csrf_token %}
-    <div class="container">
-        <div class="my-3">
-            <div class="float-end">
-                <a button type="button" class="btn btn-primary"
-                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1rem; margin-bottom: 2rem;" href="new_post/">작성</a>
-            </div>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col">제목</th>
-                        <th scope="col">답변</th>
-                        <th scope="col">날짜</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- 자주 묻는 질문 -->
-                    {% for list in faqlist %}
-                        <tr>
-                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📌&nbsp;</td>
-                            <td>
-                                <a href="password/{{ list.pk }}/">{{ list.postname }}</a>
-                            </td>
-                            <td>자주 묻는 질문</td>
-                            <td>{{ list.created_at }}</td>
-                        </tr>
-                    {% endfor %}
-                    <!-- 일반 질문 -->
-                    {% for list in postlist %}
-                        <tr>
-                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔒&nbsp;</td>
-                            <td>
-                                <a href="password/{{ list.pk }}/">{{ list.postname }}</a>
-                            </td>
-                            <td>
-                                {% if list.answer %}
-                                    답변 완료
-                                {% else %}
-                                    답변 미완료
-                                {% endif %}
-                            </td>
-                            <td>{{ list.created_at }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            <!-- 페이지네이션 -->
-            <div class="d-flex justify-content-center">
-                <ul class="pagination">
-                    <!-- 이전 페이지 -->
-                    {% if postlist.has_previous %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ postlist.previous_page_number }}">이전</a>
-                    </li>
-                    {% else %}
-                    <li class="page-item disabled">
-                        <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
-                    </li>
-                    {% endif %}
-                    
-                    <!-- 페이지 번호 -->
-                    {% for page_number in postlist.paginator.page_range %}
-                        {% if page_number >= postlist.number|add:-5 and page_number <= postlist.number|add:5 %}
-                            {% if page_number == postlist.number %}
-                            <li class="page-item active" aria-current="page">
-                                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
-                            </li>
-                            {% else %}
-                            <li class="page-item">
-                                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
-                            </li>
-                            {% endif %}
-                        {% endif %}
-                    {% endfor %}
-    
-                    <!-- 다음 페이지 -->
-                    {% if postlist.has_next %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ postlist.next_page_number }}">다음</a>
-                    </li>
-                    {% else %}
-                    <li class="page-item disabled">
-                        <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
+<div class="container">
+    <div class="mx-auto p-2" style="width: auto;">
+        <div class="d-flex justify-content-center">
+            <h3>문의사항</h3>
         </div>
     </div>
-</form>
+    <form action="{% url 'qna:blog' %}" method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <div class="my-3">
+                <div class="float-end">
+                    <a button type="button" class="btn btn-primary"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1rem; margin-bottom: 2rem;" href="new_post/">작성</a>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">제목</th>
+                            <th scope="col">답변</th>
+                            <th scope="col">날짜</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 자주 묻는 질문 -->
+                        {% for list in faqlist %}
+                            <tr>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📌&nbsp;</td>
+                                <td>
+                                    <a href="password/{{ list.pk }}/">{{ list.postname }}</a>
+                                </td>
+                                <td>자주 묻는 질문</td>
+                                <td>{{ list.created_at }}</td>
+                            </tr>
+                        {% endfor %}
+                        <!-- 일반 질문 -->
+                        {% for list in postlist %}
+                            <tr>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔒&nbsp;</td>
+                                <td>
+                                    <a href="password/{{ list.pk }}/">{{ list.postname }}</a>
+                                </td>
+                                <td>
+                                    {% if list.answer %}
+                                        답변 완료
+                                    {% else %}
+                                        답변 미완료
+                                    {% endif %}
+                                </td>
+                                <td>{{ list.created_at }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <!-- 페이지네이션 -->
+                <div class="d-flex justify-content-center">
+                    <ul class="pagination">
+                        <!-- 이전 페이지 -->
+                        {% if postlist.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ postlist.previous_page_number }}">이전</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+                        </li>
+                        {% endif %}
+
+                        <!-- 페이지 번호 -->
+                        {% for page_number in postlist.paginator.page_range %}
+                            {% if page_number >= postlist.number|add:-5 and page_number <= postlist.number|add:5 %}
+                                {% if page_number == postlist.number %}
+                                <li class="page-item active" aria-current="page">
+                                    <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                                </li>
+                                {% else %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                                </li>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+
+                        <!-- 다음 페이지 -->
+                        {% if postlist.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ postlist.next_page_number }}">다음</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 <!--<button id="open-chatbot-btn">?</button>-->
 <!--&lt;!&ndash; 챗봇 팝업 추가 &ndash;&gt;-->
 <!--<div id="chatbot-container">-->

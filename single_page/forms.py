@@ -35,37 +35,15 @@ class CustomUserCreationForm(UserCreationForm):
             'address_detail': forms.Textarea(attrs={'class': 'form-control', 'rows': 1}),
             'deli_request': forms.Textarea(attrs={'class': 'form-control', 'rows': 1}),
         }
+    def clean_verification_code(self):
+        code = self.cleaned_data['verification_code']
+        if not self.instance.is_phone_verified:
+            if not code or code != self.instance.expected_code():
+                raise forms.ValidationError('코드가 일치하지 않습니다.')
+        return code
 
-    # 유효성 검사 수행
-    def clean(self):
-        cleaned_data = super().clean()
-        first = cleaned_data.get('phone_part1')
-        mid = cleaned_data.get('phone_part2')
-        end = cleaned_data.get('phone_part3')
-        pt = cleaned_data.get('phone_telecom')
-        psw1 = cleaned_data.get('password1')
-        psw2 = cleaned_data.get('password2')
-
-        # 휴대폰 번호 유효성 검사
-        if not re.match('^\d{2,3}$', first):
-            self.add_error('phone_part1', '휴대폰번호 앞 부분을 확인해 주세요')
-        if not re.match('^\d{3,4}$', mid):
-            self.add_error('phone_part2', '휴대폰번호 중간 부분을 확인해 주세요')
-        if not re.match('^\d{4}$', end):
-            self.add_error('phone_part3', '휴대폰번호 뒷 부분을 확인해 주세요')
-
-        # 통신사 선택 여부 파악
-        if pt == '0':
-            self.add_error('phone_telecom', '통신사를 선택 해주세요')
-
-        # 비밀번호 공백여부 파악
-        if psw1 and re.search('\s', psw1):
-            self.add_error('password1', '비밀번호1에 공백이 포함되어 있습니다.')
-
-        if psw2 and re.search('\s', psw2):
-            self.add_error('password2', '비밀번호2에 공백이 포함되어 있습니다.')
-
-        return cleaned_data
+    def expected_code(self):
+        return "123456"
 
     # 저장 메서드를 재정의하여 전화번호 부분을 하나의 필드로 결합
     def save(self, commit=True):
@@ -79,6 +57,7 @@ class CustomUserCreationForm(UserCreationForm):
             user.save()
         return user
 
+
     # 오류 메세지 출력을 개선하기 위한 함수
     def get_error_messages(self):
         error_messages = []
@@ -91,6 +70,36 @@ class CustomUserCreationForm(UserCreationForm):
 
     def custom_error(self):
         return '\n'.join(self.get_error_messages())
+
+    # def clean(self):
+#     cleaned_data = super().clean()
+#     first = cleaned_data.get('phone_part1')
+#     mid = cleaned_data.get('phone_part2')
+#     end = cleaned_data.get('phone_part3')
+#     pt = cleaned_data.get('phone_telecom')
+#     psw1 = cleaned_data.get('password1')
+#     psw2 = cleaned_data.get('password2')
+#
+#     # 휴대폰 번호 유효성 검사
+#     if not re.match('^\d{2,3}$', first):
+#         self.add_error('phone_part1', '휴대폰번호 앞 부분을 확인해 주세요')
+#     if not re.match('^\d{3,4}$', mid):
+#         self.add_error('phone_part2', '휴대폰번호 중간 부분을 확인해 주세요')
+#     if not re.match('^\d{4}$', end):
+#         self.add_error('phone_part3', '휴대폰번호 뒷 부분을 확인해 주세요')
+#
+#     # 통신사 선택 여부 파악
+#     if pt == '0':
+#         self.add_error('phone_telecom', '통신사를 선택 해주세요')
+#
+#     # 비밀번호 공백여부 파악
+#     if psw1 and re.search('\s', psw1):
+#         self.add_error('password1', '비밀번호1에 공백이 포함되어 있습니다.')
+#
+#     if psw2 and re.search('\s', psw2):
+#         self.add_error('password2', '비밀번호2에 공백이 포함되어 있습니다.')
+#
+#     return cleaned_data
 
 #  아이디 중복여부 확인 유효성검사 폼
 class CheckForm(forms.Form):
@@ -121,9 +130,18 @@ class PasswordResetForm(forms.Form):
 
 # 마이페이지 비밀번호 변경 폼
 class CustomPasswordChangeForm(PasswordChangeForm):
-    old_password = forms.CharField(widget=forms.PasswordInput, label='기존 비밀번호')
-    new_password1 = forms.CharField(widget=forms.PasswordInput, label='비밀번호')
-    new_password2 = forms.CharField(widget=forms.PasswordInput, label='비밀번호 확인')
+    old_password = forms.CharField(
+        widget=forms.PasswordInput,
+        label='기존 비밀번호'
+    )
+    new_password1 = forms.CharField(
+        widget=forms.PasswordInput,
+        label='비밀번호'
+    )
+    new_password2 = forms.CharField(
+        widget=forms.PasswordInput,
+        label='비밀번호 확인'
+    )
 
     def clean(self):
         cleaned_data = super().clean()

@@ -17,5 +17,5 @@ class User(AbstractUser):
     deli_request = models.TextField(null=True,blank=True, verbose_name='세부사항')
     phone_telecom = models.CharField(max_length=10, verbose_name='통신사')
     phone_num = models.CharField(max_length=14, verbose_name='휴대폰 번호')
-
+    is_phone_verified = models.BooleanField(default=False)
 
