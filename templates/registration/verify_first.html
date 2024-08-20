@@ -1,0 +1,67 @@
+
+<html lang="en">
+{% load static %}
+{% load widget_tweaks %}
+<head>
+    <meta charset="UTF-8">
+    <title>login.html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'single_page/script.JS' %}"></script>
+    <link href="{% static 'bootstrap/bootstrap.css' %}" rel="stylesheet" crossorigin="anonymous">
+    <script src="{% static 'bootstrap/bootstrap.js' %}" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'single_page/pretendard.css' %}">
+    <link href="{% static 'bootstrap/custom.css' %}" rel="stylesheet">
+    <style>
+        .form-border {
+            border: 1px solid #d1d1d1; /* 부드러운 회색 테두리 */
+            padding: 20px;
+            border-radius: 15px; /* 더 부드러운 둥근 모서리 */
+            width: 100%;
+            max-width: 500px; /* 최대 너비 제한 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
+            background-color: #ffffff; /* 배경색을 명확하게 설정 */
+        }
+        .container {
+            padding: 20px; /* 컨테이너에 패딩 추가 */
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container w-100 vh-100 d-flex align-items-center justify-content-center">
+        <div class="form-border">
+            <div class="text-center mb-3">
+                <a class="navbar-brand" href="#"><img src="{% static 'image/logo.png' %}" alt="로고" width="120px"></a>
+            </div>
+            <div class="container">
+                <h2 class="mb-2">휴대폰 문자 인증</h2>
+                <p class="mb-3">주로 사용하시는 휴대폰 번호를 입력해 주세요</p>
+
+            <!-- 휴대폰 번호 입력 폼 -->
+                <form id="phone-form" method="post" action=".">
+                    {% csrf_token %}
+                    <input type="text" name="phone_number" class="form-control mb-2" placeholder="'-'를 제외하고 입력">
+                    <div class="d-grid mt-3">
+                        <button type="submit" class="btn btn-secondary">인증문자 발송하기</button>
+                    </div>
+                </form>
+                {% if message %}
+                    <div class="text-danger">
+                        <p class="mb-0">{{ message }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

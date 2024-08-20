@@ -1,12 +1,13 @@
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, TemplateView, FormView, UpdateView, DeleteView             # 제너릭 뷰 상속(장고 기본 제공)
+from django.views import View
 from django.contrib.auth.views import (PasswordChangeView, PasswordResetDoneView,
                                        PasswordResetConfirmView, PasswordResetCompleteView)  # 패스워드 변경 뷰(장고 기본 제공)
 from .forms import (CustomUserCreationForm, CheckForm, SearchIdForm,
                     PasswordResetForm, Confirm_infoForm, UpdateMyInfoForm, CustomPasswordChangeForm, UserSetPasswordForm)     # 작성한 폼 가져오기
 from django.urls import reverse_lazy
-from .models import User
+from .models import User, Authsms
 from django.contrib.auth.mixins import LoginRequiredMixin   # 로그인된 사용자만 접근 가능
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
@@ -15,6 +16,9 @@ from django.utils.http import urlsafe_base64_encode
 from django.utils.encoding import force_bytes
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth import logout
+from django.db.models import Value
+from django.db.models.functions import Replace
+import re
 
 # 메인 화면 및 로그인을 수행하는 View
 def maincall(request):
@@ -40,33 +44,6 @@ class UserCreateView(CreateView):                   # 새로운 레코드 생성
     template_name = 'registration/register.html'
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('register_done')     # 폼에 에러가 없고 테이블 생성이 완료된 경우 회원가입 성공 페이지로 이동
-
-    def form_valid(self, form):
-        action = self.request.POST.get('action')
-
-        # 1단계: 인증 코드 전송
-        if action == 'send_code':
-            phone_number = f"{form.cleaned_data.get('phone_part1')}-{form.cleaned_data.get('phone_part2')}-{form.cleaned_data.get('phone_part3')}"
-            self.send_verification_code(phone_number)
-
-        # 2단계: 인증 코드 검증 및 회원가입 완료
-        elif action == 'verify_code':
-            verification_code = form.cleaned_data.get('verify_code')
-            if verification_code == form.expected_code():
-                user = form.save(commit=False)
-                user.is_phone_verified = True
-                user.save()
-                return redirect(self.success_url)
-            else:
-                form.add_error('verification_code', 'Invalid verification code.')
-                return self.form_invalid(form)
-
-        return super().form_valid(form)
-
-    def send_verification_code(self, phone_number):
-        print(f"Sending verification code to {phone_number}")
-        # 실제 문자인증 코드 전송 로직 추가 (예: 외부 API 호출)
-        pass
 
     # 폼에서 유효성 검사를 만족하지 못한 경우
     def form_invalid(self, form):
@@ -106,6 +83,60 @@ class UserIdCheckView(FormView):
                 'is_taken': -1,
             }
         return render(self.request, self.template_name, context=context)
+
+class VerifyFirstView(View):
+    template_name = 'registration/verify_first.html'
+
+    def get(self, request):
+        phone_number = request.GET.get('phone_number')
+        return render(request, self.template_name, {'phone_number': phone_number})
+
+    def post(self, request):
+        p_num = request.POST.get('phone_number')
+        phone_regex = re.compile(r'^010\d{8}$')
+
+        if not phone_regex.match(p_num):
+            return render(request, self.template_name, {'message': '휴대폰 번호를 확인해 주세요', 'phone_number': p_num})
+
+        normalized_p_num = p_num.replace("-", "")
+        if User.objects.annotate(
+            normalized_phone_num=Replace('phone_num', Value('-'), Value(''))
+        ).filter(normalized_phone_num=normalized_p_num).exists():
+            return render(request, self.template_name, {'message': '이미 존재하는 번호 입니다', 'phone_number': p_num})
+
+        authsms = Authsms.request_auth_number(p_num)
+        return render(request, 'registration/verify_phone.html', {'phone_number': p_num})
+
+class VerifyPhoneView(View):
+    template_name = 'registration/verify_phone.html'
+    def post(self, request):
+        action = request.POST.get('action')
+        p_num = request.POST.get('phone_number')
+        phone_regex = re.compile(r'^010\d{8}$')
+        if action == 'resend':
+            if phone_regex.match(p_num):
+                Authsms.request_auth_number(p_num)  # 인증번호 재발급 및 SMS 전송
+                message = '인증 번호가 재발송되었습니다.'
+            else:
+                message = '올바른 전화번호를 입력해 주세요.'
+
+        elif action == 'confirm':
+            a_num = request.POST.get('auth_number')
+            if not phone_regex.match(p_num):
+                message = '올바른 전화번호를 입력해 주세요.'
+
+            elif not a_num:
+                message = '인증문자를 입력해 주세요.'
+
+            else:
+                result = Authsms.check_auth_number(p_num, a_num)
+                if result:
+                    message = 'success'
+                else:
+                    message = '인증 번호가 유효하지 않습니다.'
+        else:
+            message = '폼 제출 오류가 발생했습니다.'
+        return render(request, self.template_name, {'phone_number': p_num, 'message': message})
 
 class SearchIdView(FormView):
     template_name = 'registration/search_id.html'

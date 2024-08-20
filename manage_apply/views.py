@@ -802,7 +802,7 @@ def 정보페이지_call(request):
                 selected_columns = ['name', 'company_name', 'phone_num', 'last_login', 'is_active', 'date_joined', 'address_num',
                                     'address_info', 'address_detail']
                 user_df['date_joined'] = user_df['date_joined'].apply(lambda x: x.strftime('%Y/%m/%d'))
-                user_df['last_login'] = user_df['last_login'].apply(lambda x: x.strftime('%Y/%m/%d'))
+                user_df['last_login'] = user_df['last_login'].apply(lambda x: x.strftime('%Y/%m/%d') if pd.notna(x) else '' )
                 user_df = user_df[selected_columns]
                 user_df.rename({'name': '이름', 'company_name': '회사명', 'last_login': '마지막 로그인',
                                 'is_active': '활성 여부', 'date_joined': '등록일', 'address_num': '우편번호',
