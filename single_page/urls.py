@@ -17,6 +17,12 @@ urlpatterns = [
     # localhost/accounts/register/checkid : 회원가입 >> 아이디 중복 검사
     path("accounts/register/checkid/", views.UserIdCheckView.as_view(), name="check_id"),
 
+    # localhost/accounts/register/verify_phone : 회원가입 >> 인증 문자 전송
+    path("accounts/register/verify_first/", views.VerifyFirstView.as_view(), name="verify_first"),
+
+    # localhost/accounts/register/verify_phone : 인증 문자 전종 >> 휴대폰 유효성 검사
+    path("accounts/register/verify_phone/", views.VerifyPhoneView.as_view(), name="verify_phone"),
+
     # localhost/acounts/register/done : 회원가입 성공시 사용
     path("accounts/register/success",views.UserCreateDoneTV.as_view(), name="register_done"),
 

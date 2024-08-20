@@ -8,6 +8,7 @@
         border-radius: 10px;
         padding: 40px 20px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: 85%;
     }
 
     .btn-custom {
@@ -17,6 +18,7 @@
         padding: 5px 10px;
         border-radius: 5px;
         transition: background-color 0.3s ease;
+        width: 100%;
     }
 
     .btn-custom:hover {
@@ -32,8 +34,29 @@
       max-height: 70vh; /* 모달 창의 높이를 고정 */
       overflow-y: auto; /* 내부 스크롤 설정 */
     }
+    @media (max-width: 576px) {
+        .row > div[class^="col-"] {
+            margin-bottom: 15px;
+        }
 
+        .d-flex.justify-content-left.gap-4 > .btn {
+            width: 100%; /* 버튼을 전체 너비로 설정 */
+            margin-bottom: 10px; /* 버튼 간의 간격 추가 */
+        }
 
+        .border {
+            padding: 20px 10px; /* 작은 화면에서 패딩 줄이기 */
+            width: 100%;
+        }
+
+        .form-control, .form-check-input {
+            font-size: 0.875rem; /* 입력창의 글꼴 크기 조정 */
+        }
+
+        .modal-dialog {
+            max-width: 90%; /* 작은 화면에서 모달 창 너비 증가 */
+        }
+    }
 </style>
 {% endblock %}
 
@@ -46,87 +69,78 @@
 
 <div class="container d-flex justify-content-center">
     <div class="border">
-<!--        {% if form.errors %}-->
-<!--        <div class="text-danger">-->
-<!--            {% for field in form %}-->
-<!--                {% if field.errors %}-->
-<!--                    <p>{{field.label}}{{ field.errors }}</p>-->
-<!--                {% endif %}-->
-<!--            {% endfor %}-->
-<!--        </div>-->
-<!--        {% endif %}-->
         <form name="register" class="col-10 mx-auto" action="." method="post"> {% csrf_token %}
             <h4 class="mb-3">회원 정보 입력</h4><br>
             <div class="row mb-3 d-flex align-items-center">
-                <label class="col-2 col-form-label">아이디</label>
-                <div class="col-7">
+                <label class="col-md-2 col-form-label">아이디</label>
+                <div class="col-md-7 col-12">
                     {{ form.username|add_class:"form-control bg-light"|attr:"readonly=readonly placeholder=아이디"}}
                 </div>
-                <div class="col-3">
+                <div class="col-md-3 col-12 mt-2 mt-md-0">
                     <button type="button" id="check_id_button" onclick="return check_id()" class="btn btn-custom">아이디 확인</button>
                 </div>
             </div>
 
             <div class="row mb-3">
-                    <label class="col-2 col-form-label">비밀번호</label>
-                    <div class="col-10">
+                    <label class="col-md-2 col-12 col-form-label">비밀번호</label>
+                    <div class="col-md-10 col-12">
                             {{form.password1|add_class:"form-control mb-2"|attr:"placeholder=비밀번호"}}
                             <p class="text-danger mb-0">비밀번호는 최소 8자 이상 입력해주세요</p>
                     </div>
             </div>
 
             <div class="row mb-3">
-                <label class="col-2 col-form-label">비밀번호 확인</label>
-                <div class="col-10">
+                <label class="col-md-2 col-12 col-form-label">비밀번호 확인</label>
+                <div class="col-md-10 col-12">
                     {{form.password2|add_class:"form-control"|attr:"placeholder=비밀번호 확인"}}
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label class="col-2 col-form-label">회사명</label>
-                <div class="col-10">
+                <label class="col-md-2 col-12 col-form-label">회사명</label>
+                <div class="col-md-10 col-12">
                     {{form.company_name|add_class:"form-control"|attr:"placeholder=회사명"}}
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label class="col-2 col-form-label">담당자명</label>
-                <div class="col-10">
+                <label class="col-md-2 col-12 col-form-label">담당자명</label>
+                <div class="col-md-10 col-12">
                     {{form.name|add_class:"form-control"|attr:"placeholder=담당자명"}}
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label class="col-2 col-form-label">이메일</label>
-                <div class="col-10">
+                <label class="col-md-2 col-12 col-form-label">이메일</label>
+                <div class="col-md-10 col-12">
                     {{form.email|add_class:"form-control mb-2"|attr:"placeholder=이메일"}}
                     <p class="text-danger">비밀번호 찾기에서 사용됩니다. 현재 사용하시는 이메일을 작성해주세요</p>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label class="col-2 col-form-label">주소</label>
-                <div class="col-10">
+                <label class="col-md-2 col-12 col-form-label">주소</label>
+                <div class="col-md-10 col-12">
                     <div class="row d-flex align-items-center mb-2">
-                        <div class="col-6">
+                        <div class="col-md-6 col-4">
                             {{ form.address_num | add_class:"form-control bg-light"|attr:"id=sample6_postcode placeholder=우편번호 readonly='readonly'" }}
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6 col-8">
                             <button type="button" onclick="sample6_execDaumPostcode()" class="btn btn-custom">우편번호 찾기</button>
                         </div>
                     </div>
                     <div class="row mb-2">
-                        <div class="col">
+                        <div class="col-12">
                             {{ form.address_info | add_class:"form-control bg-light"|attr:"id=sample6_address placeholder=도로명주소 readonly='readonly'" }}
                         </div>
                     </div>
                     <div class="row mb-2">
-                        <div class="col">
+                        <div class="col-12">
                             {{ form.address_detail | add_class:"form-control"|attr:"id=sample6_detailAddress placeholder=상세주소" }}
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
+                        <div class="col-12">
                             {{ form.deli_request|add_class:"form-control"|attr:"id=sample6_extraAddress placeholder=세부사항" }}
                         </div>
                     </div>
@@ -134,44 +148,35 @@
             </div>
 
             <div class="row mb-3">
-                <label for="phone_telecom" class="col-sm-2 col-form-label">휴대폰</label>
-                <div class="col">
+                <label class="col-md-2 col-12 col-form-label">휴대폰</label>
+                <div class="col-md-10 col-12">
                     <div class="row d-flex align-items-center mb-2">
-                        <div class="col-2 me-2">
-                            {{form.phone_telecom|add_class:"form-select"}}
+                        <div class="col-md-2">
+                            {{form.phone_part1|add_class:"form-control bg-light"|attr:"readonly='readonly'"}}
                         </div>
-                        <div class="col-2">
-                            {{form.phone_part1|add_class:"form-control"|attr:"placeholder=010"}}
+                        <div class="col-md-2">
+                            {{form.phone_part2|add_class:"form-control bg-light"|attr:"readonly='readonly'"}}
                         </div>
-                        <div class="col-2">
-                            {{form.phone_part2|add_class:"form-control"|attr:"placeholder=XXXX"}}
+                        <div class="col-md-2">
+                            {{form.phone_part3|add_class:"form-control bg-light"|attr:"readonly='readonly'"}}
                         </div>
-                        <div class="col-2">
-                            {{form.phone_part3|add_class:"form-control"|attr:"placeholder=XXXX"}}
-                        </div>
-                        <div class="col-3">
-                            <button type="button" name="action" value="send_code" onclick="verify1()" class="btn btn-custom">인증번호 발송</button>
+                        <div class="col-md-3 col-12">
+                            <button type="button" id="verify_button" name="action" value="send_code" onclick="verify1()" class="btn btn-custom">번호 등록하기</button>
                         </div>
                     </div>
-                    <div class="row d-flex align-items-center">
-                        <div class="col-3">
-                            {{form.verify_code|add_class:"form-control"}}
-                        </div>
-                        <div class="col-9 d-flex align-items-center gap-3">
-                            <button type="button" name="action" value="verify_code" onclick="verify2()" class="btn btn-custom">확인</button>
-                            <p class="text-danger mb-0">휴대폰으로 받으신 인증번호를 입력해주세요</p>
-                        </div>
+                    <div id="phone_verification_status">
+
                     </div>
                 </div>
             </div>
 
             <div class="row mb-3 d-flex align-items-center">
-                <label class="col-2 col-form-label">가입 약관 동의</label>
-                <div class="col-10">
+                <label class="col-md-2 col-12 col-form-label">가입 약관 동의</label>
+                <div class="col-md-10 col-12">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="gridCheck1" required="required">
                         <label class="form-check-label" for="gridCheck1" data-bs-toggle="modal" data-bs-target="#privacyModal">
-                            <a href="#" class="text-decoration-none text-black">개인정보 수집 및 이용에 동의합니다. (필수)</a>
+                            <a href="#" class="text-decoration-none text-black">[필수]개인정보 수집 및 이용에 동의합니다. (자세히 보기)</a>
                         </label>
                     </div>
                 </div>
@@ -415,70 +420,13 @@ function sample6_execDaumPostcode() {
     }).open();
 }
 
-//휴대폰 번호 앞부분
-function checkNumber_first(value) {
-    return (/^\d{2,3}$/.test(value));
-}
-
-//휴대폰 번호 중간 부분
-function checkNumber_mid(value) {
-    return (/^\d{3,4}$/.test(value));
-}
-
-//휴대폰 번호 뒷 부분
-function checkNumber_end(value) {
-    return (/^\d{4}$/.test(value));
-}
-
-// 통신사 선택여부 확인
-function check_telecom(value) {
-    if(value === '0'){
-        return false;
-    }
-    return true;
-}
-
 function verify1(){
-    phone1 = document.register.phone_part1.value;
-    phone2 = document.register.phone_part2.value;
-    phone3 = document.register.phone_part3.value;
-    telecome = document.register.phone_telecom.value
-
-    // 통신사 선택여부 확인
-    if(!check_telecom(telecome))
-    {
-        document.register.phone_telecom.focus();
-        alert('통신사를 선택해주세요');
-        return false;
-    }
-    // 휴대폰 번호 유효성 검사
-    else if(!checkNumber_first(phone1))
-    {
-        document.register.phone_part1.focus();
-        alert('휴대폰 번호 앞 부분을 형식에 맞게 작성해 주세요')
-        return false;
-    }
-    else if(!checkNumber_mid(phone2))
-    {
-        document.register.phone_part2.focus();
-        alert('휴대폰 번호 가운데 부분을 형식에 맞게 작성해 주세요');
-        return false;
-    }
-    else if(!checkNumber_end(phone3))
-    {
-        document.register.phone_part3.focus();
-        alert('휴대폰 번호 뒷 부분을 형식에 맞게 작성해 주세요');
-        return false;
-    }
-
-    document.register.submit();
+     window.open("{% url 'verify_first' %}",
+    "휴대폰 문자 인증",
+    "left=700,top=200,width=400,height=450,scrollbars=no,resizable=yes");
     return true;
 }
 
-function verify2(){
-    document.register.submit();
-    return true;
-}
 </script>
 
 {% endblock %}
