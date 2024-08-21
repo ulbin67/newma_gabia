@@ -4,9 +4,14 @@ from .models import *
 from io import BytesIO
 from matplotlib import pyplot as plt
 import seaborn as sns
+import matplotlib as mpl
 
-plt.rc("font", family = "Malgun Gothic")
-sns.set(font="Malgun Gothic", rc={"axes.unicode_minus":False}, style='white')
+# 폰트 설정
+plt.rcParams['font.family'] = 'NanumGothic'
+mpl.rcParams['axes.unicode_minus'] = False  # 마이너스 기호가 깨지지 않게 설정
+
+# Seaborn 설정
+sns.set(font='NanumGothic', rc={"axes.unicode_minus": False}, style='white')
 
 def generate_code():
     return str(uuid.uuid4()).replace('-', '').upper()[:12]
