@@ -11,8 +11,9 @@ venv
 secrets.json
 
 newmadb.sqlite3
-manage_apply/migrations/0001_initial.py
-qna/migrations/0001_initial.py
-single_page/migrations/0001_initial.py
-
 *.sqlite3
+*.log
+staticfiles/
+media/
+/static/
+
