@@ -1,0 +1,114 @@
+Exception while resolving variable 'errors' in template 'registration/register.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [errors] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f02804859d0>>, 'request': <WSGIRequest: GET '/accounts/register/'>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f02803eb8b0>>, 'perms': PermWrapper(<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f02803eb8b0>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/accounts/register/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <CustomUserCreationForm bound=False, valid=Unknown, fields=(username;password1;password2;name;address_num;address_info;address_detail;deli_request;company_name;email;phone_part1;phone_part2;phone_part3)>, 'view': <single_page.views.UserCreateView object at 0x7f0280483100>}, {'block': <Block Node: main_area. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n\n<div class="container d'>, <django.template.defaulttags.CsrfTokenNode object at 0x7f02804b7760>, <TextNode: '\n            <h4 class="m'>, <Variable Node: form.username|add_class:"form-control bg-light"|attr:"readonly=readonly placeholder=아이디">, <TextNode: '\n                </div>\n '>, <Variable Node: form.password1|add_class:"form-control mb-2"|attr:"placeholder=비밀번호">, <TextNode: '\n                        '>, <Variable Node: form.password2|add_class:"form-control"|attr:"placeholder=비밀번호 확인">, <TextNode: '\n                </div>\n '>, <Variable Node: form.company_name|add_class:"form-control"|attr:"placeholder=회사명">, <TextNode: '\n                </div>\n '>, <Variable Node: form.name|add_class:"form-control"|attr:"placeholder=담당자명">, <TextNode: '\n                </div>\n '>, <Variable Node: form.email|add_class:"form-control mb-2"|attr:"placeholder=이메일">, <TextNode: '\n                    <p c'>, <Variable Node: form.address_num | add_class:"form-control bg-light"|attr:"id=sample6_postcode placeholder=우편번호 readonly='readonly'">, <TextNode: '\n                        '>, <Variable Node: form.address_info | add_class:"form-control bg-light"|attr:"id=sample6_address placeholder=도로명주소 readonly='readonly'">, <TextNode: '\n                        '>, <Variable Node: form.address_detail | add_class:"form-control"|attr:"id=sample6_detailAddress placeholder=상세주소">, <TextNode: '\n                        '>, <Variable Node: form.deli_request|add_class:"form-control"|attr:"id=sample6_extraAddress placeholder=세부사항">, <TextNode: '\n                        '>, <Variable Node: form.phone_part1|add_class:"form-control bg-light"|attr:"readonly='readonly'">, <TextNode: '\n                        '>, <Variable Node: form.phone_part2|add_class:"form-control bg-light"|attr:"readonly='readonly'">, <TextNode: '\n                        '>, <Variable Node: form.phone_part3|add_class:"form-control bg-light"|attr:"readonly='readonly'">, <TextNode: '\n                        '>, <URLNode view_name=''check_id'' args=[] kwargs={} as=None>, <TextNode: '?username=" + encodeURICo'>, <URLNode view_name=''verify_first'' args=[] kwargs={} as=None>, <TextNode: '",\n    "휴대폰 문자 인증",\n    "'>]>}]
+Not Found: /.env
+Not Found: /.git/config
+Exception while resolving variable 'errors' in template 'registration/register.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [errors] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f9a58e57670>>, 'request': <WSGIRequest: GET '/accounts/register/'>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f9a58dd3040>>, 'perms': PermWrapper(<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f9a58dd3040>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/accounts/register/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <CustomUserCreationForm bound=False, valid=Unknown, fields=(username;password1;password2;name;address_num;address_info;address_detail;deli_request;company_name;email;phone_part1;phone_part2;phone_part3)>, 'view': <single_page.views.UserCreateView object at 0x7f9a58dc2b80>}, {'block': <Block Node: main_area. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n\n<div class="container d'>, <django.template.defaulttags.CsrfTokenNode object at 0x7f9a58dd0df0>, <TextNode: '\n            <h4 class="m'>, <Variable Node: form.username|add_class:"form-control bg-light"|attr:"readonly=readonly placeholder=아이디">, <TextNode: '\n                </div>\n '>, <Variable Node: form.password1|add_class:"form-control mb-2"|attr:"placeholder=비밀번호">, <TextNode: '\n                        '>, <Variable Node: form.password2|add_class:"form-control"|attr:"placeholder=비밀번호 확인">, <TextNode: '\n                </div>\n '>, <Variable Node: form.company_name|add_class:"form-control"|attr:"placeholder=회사명">, <TextNode: '\n                </div>\n '>, <Variable Node: form.name|add_class:"form-control"|attr:"placeholder=담당자명">, <TextNode: '\n                </div>\n '>, <Variable Node: form.email|add_class:"form-control mb-2"|attr:"placeholder=이메일">, <TextNode: '\n                    <p c'>, <Variable Node: form.address_num | add_class:"form-control bg-light"|attr:"id=sample6_postcode placeholder=우편번호 readonly='readonly'">, <TextNode: '\n                        '>, <Variable Node: form.address_info | add_class:"form-control bg-light"|attr:"id=sample6_address placeholder=도로명주소 readonly='readonly'">, <TextNode: '\n                        '>, <Variable Node: form.address_detail | add_class:"form-control"|attr:"id=sample6_detailAddress placeholder=상세주소">, <TextNode: '\n                        '>, <Variable Node: form.deli_request|add_class:"form-control"|attr:"id=sample6_extraAddress placeholder=세부사항">, <TextNode: '\n                        '>, <Variable Node: form.phone_part1|add_class:"form-control bg-light"|attr:"readonly='readonly'">, <TextNode: '\n                        '>, <Variable Node: form.phone_part2|add_class:"form-control bg-light"|attr:"readonly='readonly'">, <TextNode: '\n                        '>, <Variable Node: form.phone_part3|add_class:"form-control bg-light"|attr:"readonly='readonly'">, <TextNode: '\n                        '>, <URLNode view_name=''check_id'' args=[] kwargs={} as=None>, <TextNode: '?username=" + encodeURICo'>, <URLNode view_name=''verify_first'' args=[] kwargs={} as=None>, <TextNode: '",\n    "휴대폰 문자 인증",\n    "'>]>}]
+Exception while resolving variable 'form' in template 'registration/check_id.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [form] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f9a58d5caf0>>, 'request': <WSGIRequest: GET '/accounts/register/checkid/?username='>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x7f9a58d5c8b0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x7f9a58d5c8b0>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/accounts/register/checkid/?username='>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'username': '', 'is_taken': -1}]
+Exception while resolving variable 'form' in template 'registration/check_id.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [form] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f9a58d5c8b0>>, 'request': <WSGIRequest: POST '/accounts/register/checkid/?username='>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x7f9a58d5caf0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x7f9a58d5caf0>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/accounts/register/checkid/?username='>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'username': 'super1', 'is_taken': False}]
