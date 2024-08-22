@@ -21656,3 +21656,1670 @@ Traceback (most recent call last):
   File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
     raise VariableDoesNotExist(
 django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7fd8ac8a9fa0>}, {}]
+Not Found: /files/bp.dat
+Not Found: /wp-login.php
+Not Found: /_profiler/phpinfo
+Not Found: /files/bp.dat
+Not Found: /.env
+Not Found: /files/bp.dat
+Not Found: /.env
+Not Found: /.aws/credentials
+Not Found: /.aws/credentials.gpg
+Not Found: /.aws/credentials.gpg
+Not Found: /phpinfo.php
+Not Found: /phpinfo
+Not Found: /info
+Not Found: /php_info
+Not Found: /php_info.php
+Not Found: /info.php
+Not Found: /_profiler/phpinfo.php
+Not Found: /_profiler/phpinfo
+Not Found: /owa/auth/logon.aspx
+Not Found: /.env
+Not Found: //wp-includes/ID3/license.txt
+Not Found: //feed/
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //2021/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: /.env
+Invalid HTTP_HOST header: '207.154.205.99'. You may need to add '207.154.205.99' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '207.154.205.99'. You may need to add '207.154.205.99' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /hello.world
+Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/phpunit/LICENSE/eval-stdin.php
+Not Found: /vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /phpunit/phpunit/Util/PHP/eval-stdin.php
+Not Found: /phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /phpunit/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/phpunit/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/Util/PHP/eval-stdin.php
+Not Found: /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /V2/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /demo/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /crm/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /backup/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /index.php
+Not Found: /public/index.php
+Not Found: /index.php
+Not Found: /index.php
+Not Found: /.env
+Not Found: /v2/_catalog
+Not Found: /solr/admin/info/system
+Not Found: /cgi-bin/authLogin.cgi
+Not Found: /query
+Not Found: /solr/admin/cores
+Not Found: /files/bp.dat
+Not Found: /dns-query
+Not Found: /dns-query
+Not Found: /dns-query
+Not Found: /dns-query
+Not Found: /dns-query
+Not Found: /dns-query
+Not Found: /query
+Not Found: /query
+Not Found: /query
+Not Found: /query
+Not Found: /query
+Not Found: /query
+Not Found: /resolve
+Not Found: /resolve
+Not Found: /resolve
+Not Found: /resolve
+Not Found: /resolve
+Not Found: /resolve
+Forbidden (Referer checking failed - no Referer.): /
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /hello.world
+Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/phpunit/LICENSE/eval-stdin.php
+Not Found: /vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /phpunit/phpunit/Util/PHP/eval-stdin.php
+Not Found: /phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /phpunit/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/phpunit/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/Util/PHP/eval-stdin.php
+Not Found: /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /V2/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /demo/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /crm/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /backup/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /index.php
+Not Found: /public/index.php
+Not Found: /index.php
+Not Found: /index.php
+Not Found: /files/bp.dat
+Not Found: /_profiler/phpinfo
+Exception while resolving variable 'apcan_phone' in template 'manage_apply/manage_page.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'CompanyInfo' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'CompanyInfo' object has no attribute 'apcan_phone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'apcan_phone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [apcan_phone] in <CompanyInfo: 삼성전자>
+Exception while resolving variable 'include_media' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'include_media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'include_media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'include_media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [include_media] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=Unknown, fields=(date_from;date_to;chart_type)>}]
+Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c467f0>}, {}]
+Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c467f0>}, {}]
+Exception while resolving variable 'wrapper_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [wrapper_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c467f0>}, {}]
+Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c467f0>}, {}]
+Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c467f0>}, {}, {}]
+Exception while resolving variable 'error_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [error_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c467f0>}, {}, {}]
+Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c467f0>}, {}, {}]
+Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c467f0>}, {}]
+Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46670>}, {}]
+Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46670>}, {}]
+Exception while resolving variable 'wrapper_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [wrapper_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46670>}, {}]
+Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46670>}, {}]
+Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46670>}, {}, {}]
+Exception while resolving variable 'error_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [error_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46670>}, {}, {}]
+Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46670>}, {}, {}]
+Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46670>}, {}]
+Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46a60>}, {}]
+Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46a60>}, {}]
+Exception while resolving variable 'wrapper_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [wrapper_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46a60>}, {}]
+Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46a60>}, {}]
+Exception while resolving variable 'use_custom_control' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'use_custom_control'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'use_custom_control'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'use_custom_control'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [use_custom_control] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46a60>}, {}]
+Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46a60>}, {}, {}]
+Exception while resolving variable 'error_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [error_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46a60>}, {}, {}]
+Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46a60>}, {}, {}]
+Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplySearchForm bound=False, valid=False, fields=(date_from;date_to;chart_type)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90c46a60>}, {}]
+Exception while resolving variable 'include_media' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'include_media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'include_media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'include_media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [include_media] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=Unknown, fields=(date_from2;date_to2;company_info)>}]
+Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8640>}, {}]
+Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8640>}, {}]
+Exception while resolving variable 'wrapper_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [wrapper_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8640>}, {}]
+Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8640>}, {}]
+Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8640>}, {}, {}]
+Exception while resolving variable 'error_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [error_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8640>}, {}, {}]
+Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8640>}, {}, {}]
+Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 3, 'revcounter0': 2, 'first': True, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8640>}, {}]
+Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8550>}, {}]
+Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8550>}, {}]
+Exception while resolving variable 'wrapper_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [wrapper_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8550>}, {}]
+Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8550>}, {}]
+Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8550>}, {}, {}]
+Exception while resolving variable 'error_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [error_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8550>}, {}, {}]
+Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8550>}, {}, {}]
+Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 1, 'counter': 2, 'revcounter': 2, 'revcounter0': 1, 'first': False, 'last': False}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf8550>}, {}]
+Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf84c0>}, {}]
+Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf84c0>}, {}]
+Exception while resolving variable 'wrapper_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'wrapper_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [wrapper_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf84c0>}, {}]
+Exception while resolving variable 'form_class' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'form_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [form_class] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf84c0>}, {}]
+Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf84c0>}, {}, {}]
+Exception while resolving variable 'error_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'error_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [error_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf84c0>}, {}, {}]
+Exception while resolving variable 'help_text_inline' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'help_text_inline'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [help_text_inline] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf84c0>}, {}, {}]
+Exception while resolving variable 'tag' in template 'bootstrap4/uni_form.html'.
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'Context' has no attribute 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'tag'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/main/newma_gabia/venv/lib/python3.8/site-packages/django/template/base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [tag] in [{'True': True, 'False': False, 'None': None}, {'field_class': '', 'field_template': 'bootstrap4/field.html', 'form_show_errors': True, 'form_show_labels': True, 'label_class': '', 'form': <ApplyForm bound=False, valid=False, fields=(date_from2;date_to2;company_info)>}, {'forloop': {'parentloop': {}, 'counter0': 2, 'counter': 3, 'revcounter': 1, 'revcounter0': 0, 'first': False, 'last': True}, 'field': <django.forms.boundfield.BoundField object at 0x7f2a90bf84c0>}, {}]
+Not Found: /.git/config
+Not Found: /.env
+Not Found: /.git/config
+Not Found: /.git/config
+Not Found: /hello.world
+Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/phpunit/LICENSE/eval-stdin.php
+Not Found: /vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /phpunit/phpunit/Util/PHP/eval-stdin.php
+Not Found: /phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /phpunit/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/phpunit/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/Util/PHP/eval-stdin.php
+Not Found: /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /V2/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /demo/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /crm/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /backup/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /index.php
+Not Found: /public/index.php
+Not Found: /index.php
+Not Found: /index.php
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /ads.txt
+Not Found: /app-ads.txt
+Not Found: /sellers.json
+Not Found: /robots.txt
