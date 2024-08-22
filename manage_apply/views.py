@@ -707,16 +707,20 @@ def 정보페이지_call(request):
     page_obj = None
     user_obj = None
 
+    # 관리자 권한 확인
     if request.user.is_staff:
         current_datetime = timezone.now()
-        default_start_date = current_datetime - timezone.timedelta(days=30)
+        default_start_date = current_datetime - timezone.timedelta(days=30)     # 기본 기간 설정 (30일 전부터 현재까지)
         default_end_date = current_datetime
 
+        # POST 요청 처리
         if request.method == 'POST':
+            # 검색 폼 제출 시
             if 'search_submit' in request.POST and search_form.is_valid():
                 date_from = request.POST.get('date_from')
                 date_to = request.POST.get('date_to')
                 chart_type = request.POST.get('chart_type')
+                # 검색 조건에 따른 데이터 필터링 및 차트 생성
                 apply_qs = Apply.objects.filter(apply_at__lte=date_to, apply_at__gte=date_from)
                 if apply_qs.exists():
                     apply_df = pd.DataFrame(apply_qs.values())
@@ -725,7 +729,9 @@ def 정보페이지_call(request):
                 else:
                     messages.warning(request, "해당 날짜의 거래 데이터가 없습니다.")
 
+            # 회사 정보 폼 제출 시
             if 'company_info_submit' in request.POST and company_info_form.is_valid():
+                # 입력된 회사 정보에 따라 데이터 필터링
                 company_info = request.POST.get('company_info')
                 date_from2 = request.POST.get('date_from2')
                 date_to2 = request.POST.get('date_to2')
@@ -743,6 +749,7 @@ def 정보페이지_call(request):
                     )
                     User_qs = User.objects.exclude(is_staff=True)
 
+                # 결과가 있을 경우 데이터프레임 변환 및 페이징 처리
                 if company_qs.exists():
                     company_df = pd.DataFrame(company_qs.values())
                     selected_columns = ['apply_at', 'company', 'address_num', 'applicant', 'apcan_phone', 'progress', 'invoice_num',
@@ -764,6 +771,7 @@ def 정보페이지_call(request):
                 else:
                     messages.warning(request, "해당 회사에 대한 거래 데이터가 없습니다.")
 
+                # 결과가 있을 경우 데이터프레임 변환 및 페이징 처리
                 if User_qs.exists():
                     user_df = pd.DataFrame(User_qs.values())
                     selected_columns = ['name', 'company_name', 'phone_num', 'last_login', 'is_active', 'date_joined', 'address_num',
@@ -786,12 +794,14 @@ def 정보페이지_call(request):
                     messages.warning(request, "해당 유저에 대한 데이터가 없습니다.")
 
         else:  # GET 요청일 경우
+            # 기본 날짜 범위에 따른 초기 데이터 필터링 및 차트 생성
             apply_qs = Apply.objects.filter(apply_at__gte=default_start_date, apply_at__lte=default_end_date)
             if apply_qs.exists():
                 apply_df = pd.DataFrame(apply_qs.values())
                 chart = get_chart('#1', apply_df)  # 예시: 기본 차트 타입으로 'line' 사용
                 apply_df = apply_df.to_html()
 
+            # 초기 회사 정보 및 유저 정보 페이징 처리
             company_qs = Apply.objects.filter(apply_at__gte=default_start_date, apply_at__lte=default_end_date)
             if company_qs.exists():
                 company_df = pd.DataFrame(company_qs.values())
@@ -834,6 +844,7 @@ def 정보페이지_call(request):
                 user_page_number = request.GET.get('page')
                 user_obj = user_paginator.get_page(user_page_number)
 
+        # 컨텍스트에 필요한 데이터 전달
         context = {
             'company_list': page_obj,
             'search_form': search_form,
@@ -845,4 +856,4 @@ def 정보페이지_call(request):
         }
         return render(request, 'manage_apply/정보페이지.html', context)
     else:
-        return redirect("/")
+        return redirect("/")        # 스태프가 아닌 경우 리다이렉트
