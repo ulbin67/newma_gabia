@@ -365,7 +365,7 @@ def pro_done_call(request):
 def research_apply2(request):
     try:
         # HTML에 사용자가 입력한 값 불러오기
-        company = re.sub(r'[\s]'|r'기공소', '', request.POST.get('company', ''))
+        company = re.sub(r'[\s기공소]', '', request.POST.get('company', ''))
         applicant = re.sub(r'[\s]', '', request.POST.get('applicant', ''))
         apcan_phone = re.sub(r'[^0-9]', '', request.POST.get('apcan_phone', ''))
 
@@ -700,12 +700,12 @@ def manage_done(request):
 def 정보페이지_call(request):
     apply_df = None
     chart = None
-    company_df = None
-    user_df = None
     search_form = ApplySearchForm(request.POST or None)
     company_info_form = ApplyForm(request.POST or None)
     dates, dones = 달별박스수계산()
     month_box_data = [{'label': date, 'box_num': done} for date, done in zip(dates, dones)]
+    page_obj = None
+    user_obj = None
 
     if request.user.is_staff:
         current_datetime = timezone.now()
@@ -747,14 +747,20 @@ def 정보페이지_call(request):
                     company_df = pd.DataFrame(company_qs.values())
                     selected_columns = ['apply_at', 'company', 'address_num', 'applicant', 'apcan_phone', 'progress', 'invoice_num',
                                         'box_num', 'zir_block_count', 'zir_powder_count', 'round_bar_count', 'tool_count']
+                    company_df['apply_at'] = pd.to_datetime(company_df['apply_at'])
+                    company_df = company_df.sort_values(by='apply_at', ascending=False)
+
                     company_df['apply_at'] = company_df['apply_at'].apply(lambda x: x.strftime('%Y/%m/%d'))
                     company_df = company_df[selected_columns]
                     company_df.rename({'apply_at': '일자', 'company': '회사명', 'address_num': '우편번호', 'applicant': '신청인',
                                        'apcan_phone': '연락처', 'progress': '진행상황', 'invoice_num': '송장번호',
-                                       'box_num': '상자 수', 'zir_block_count': '지르코니아 블록',
-                                       'zir_powder_count': '지르코니아 분말', 'round_bar_count': '환봉', 'tool_count': '밀링툴'},
+                                       'box_num': '상자수', 'zir_block_count': '지르코니아블록',
+                                       'zir_powder_count': '지르코니아분말', 'round_bar_count': '환봉', 'tool_count': '밀링툴'},
                                       axis=1, inplace=True)
-                    company_df = company_df.to_html()
+                    company_list = company_df.to_dict(orient='records')
+                    paginator = Paginator(company_list, 20)  # 페이지당 20개 항목
+                    page_number = request.GET.get('page')
+                    page_obj = paginator.get_page(page_number)
                 else:
                     messages.warning(request, "해당 회사에 대한 거래 데이터가 없습니다.")
 
@@ -762,16 +768,20 @@ def 정보페이지_call(request):
                     user_df = pd.DataFrame(User_qs.values())
                     selected_columns = ['name', 'company_name', 'phone_num', 'last_login', 'is_active', 'date_joined', 'address_num',
                                         'address_info', 'address_detail']
+                    user_df['last_login'] = pd.to_datetime(user_df['last_login'])
+                    user_df = user_df.sort_values(by='last_login', ascending=False)
+
                     user_df['date_joined'] = user_df['date_joined'].apply(lambda x: x.strftime('%Y/%m/%d'))
                     user_df['last_login'] = user_df['last_login'].apply(lambda x: x.strftime('%Y/%m/%d'))
                     user_df = user_df[selected_columns]
-                    user_df.rename({'name': '이름', 'company_name': '회사명', 'last_login': '마지막 로그인',
-                                    'is_active': '활성 여부', 'date_joined': '등록일', 'address_num': '우편번호',
-                                    'address_info': '주소', 'address_detail': '상세주소', 'phone_num': '휴대폰 번호'},
+                    user_df.rename({'name': '이름', 'company_name': '회사명', 'last_login': '마지막로그인',
+                                    'is_active': '활성여부', 'date_joined': '등록일', 'address_num': '우편번호',
+                                    'address_info': '주소', 'address_detail': '상세주소', 'phone_num': '휴대폰번호'},
                                    axis=1, inplace=True)
-                    if len(user_df) < 2:
-                        user_df = user_df.T
-                    user_df = user_df.to_html()
+                    user_list = user_df.to_dict(orient='records')
+                    user_paginator = Paginator(user_list, 10)
+                    user_page_number = request.GET.get('page')
+                    user_obj = user_paginator.get_page(user_page_number)
                 else:
                     messages.warning(request, "해당 유저에 대한 데이터가 없습니다.")
 
@@ -787,38 +797,50 @@ def 정보페이지_call(request):
                 company_df = pd.DataFrame(company_qs.values())
                 selected_columns = ['apply_at', 'company', 'address_num', 'applicant', 'apcan_phone', 'progress',
                                     'invoice_num', 'box_num', 'zir_block_count', 'zir_powder_count', 'round_bar_count', 'tool_count']
+                company_df['apply_at'] = pd.to_datetime(company_df['apply_at'])
+                company_df = company_df.sort_values(by='apply_at', ascending=False)
+
                 company_df['apply_at'] = company_df['apply_at'].apply(lambda x: x.strftime('%Y/%m/%d'))
                 company_df = company_df[selected_columns]
                 company_df.rename({'apply_at': '일자', 'company': '회사명', 'address_num': '우편번호', 'applicant': '신청인',
                                    'apcan_phone': '연락처', 'progress': '진행상황', 'invoice_num': '송장번호',
-                                   'box_num': '상자 수', 'zir_block_count': '지르코니아 블록',
-                                   'zir_powder_count': '지르코니아 분말', 'round_bar_count': '환봉', 'tool_count': '밀링툴'},
+                                   'box_num': '상자수', 'zir_block_count': '지르코니아블록',
+                                   'zir_powder_count': '지르코니아분말', 'round_bar_count': '환봉', 'tool_count': '밀링툴'},
                                   axis=1, inplace=True)
-                company_df = company_df.to_html()
+                company_list = company_df.to_dict(orient='records')  # 데이터프레임을 리스트로 변환
+
+                # 페이지네이션
+                paginator = Paginator(company_list,20)  # 페이지당 20개 항목
+                page_number = request.GET.get('page')
+                page_obj = paginator.get_page(page_number)
 
             user_qs = User.objects.exclude(is_staff=True)
             if user_qs.exists():
                 user_df = pd.DataFrame(user_qs.values())
                 selected_columns = ['name', 'company_name', 'phone_num', 'last_login', 'is_active', 'date_joined', 'address_num',
                                     'address_info', 'address_detail']
+                user_df['last_login'] = pd.to_datetime(user_df['last_login'])
+                user_df = user_df.sort_values(by='last_login', ascending=False)
+
                 user_df['date_joined'] = user_df['date_joined'].apply(lambda x: x.strftime('%Y/%m/%d'))
                 user_df['last_login'] = user_df['last_login'].apply(lambda x: x.strftime('%Y/%m/%d') if pd.notna(x) else '' )
                 user_df = user_df[selected_columns]
-                user_df.rename({'name': '이름', 'company_name': '회사명', 'last_login': '마지막 로그인',
-                                'is_active': '활성 여부', 'date_joined': '등록일', 'address_num': '우편번호',
-                                'address_info': '주소', 'address_detail': '상세주소', 'phone_num': '휴대폰 번호'},
+                user_df.rename({'name': '이름', 'company_name': '회사명', 'last_login': '마지막로그인',
+                                'is_active': '활성여부', 'date_joined': '등록일', 'address_num': '우편번호',
+                                'address_info': '주소', 'address_detail': '상세주소', 'phone_num': '휴대폰번호'},
                                axis=1, inplace=True)
-                if len(user_df) < 2:
-                    user_df = user_df.T
-                user_df = user_df.to_html()
+                user_list = user_df.to_dict(orient='records')
+                user_paginator = Paginator(user_list, 10)
+                user_page_number = request.GET.get('page')
+                user_obj = user_paginator.get_page(user_page_number)
 
         context = {
-            'company_df': company_df if company_df is not None else "정보가 없습니다.",
+            'company_list': page_obj,
             'search_form': search_form,
             'company_info_form': company_info_form,
             'apply_df': apply_df if apply_df is not None else "정보가 없습니다.",
             'chart': chart if chart is not None else None,
-            'user_df': user_df if user_df is not None else "정보가 없습니다.",
+            'user_list': user_obj,
             'month_box_data': month_box_data,
         }
         return render(request, 'manage_apply/정보페이지.html', context)

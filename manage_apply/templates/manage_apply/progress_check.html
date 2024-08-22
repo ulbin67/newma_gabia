@@ -29,7 +29,7 @@
                                 <p>상자 수거를 원하시면 상자 신청 페이지 오른쪽 위 버튼을 눌러주세요.</p>
                                 <p>배송 현황을 확인하시려면 아래 버튼을 눌러주세요.</p>
                             {% elif apply.progress == 2 %}
-                                <h5>상자 수거 요청 확인 전입니다.</h5>
+                                <h5>수거 요청 확인 전입니다.</h5>
                                 <hr>
                                 <p>확인을 기다려주세요.</p>
                             {% elif apply.progress == 3 %}
@@ -64,7 +64,7 @@
         <div class="mb-5">
             <div class="mt-4">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                    <a class="btn btn-primary" type="button" href="/project/newma_repo/manage_apply/static" >돌아가기</a>
+                    <a class="btn btn-primary" type="button" href="javascript:history.back()" >돌아가기</a>
                 </div>
             </div>
         </div>

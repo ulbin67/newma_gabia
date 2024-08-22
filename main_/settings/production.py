@@ -48,3 +48,9 @@ LOGGING = {
         },
     },
 }
+
+# 세션의 기본 만료 시간 (초 단위)
+SESSION_COOKIE_AGE = 7200  # 2시간
+
+# 브라우저를 닫을 때 세션 만료 설정
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True

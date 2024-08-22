@@ -1,15 +1,6 @@
 {% extends 'single_page/base.html' %}
 {% block extra-style %}
 <style>
-    .date-field {
-        margin-bottom: 5px;  /* 하단 마진 조정 */
-        padding: 5px;  /* 패딩 조정 */
-    }
-
-    .chart-field {
-        margin-bottom: 5px; /* 하단 마진 조정 */
-        padding: 5px; /* 패딩 조정 */
-    }
 
     .table-responsive {
         overflow-x: auto;  /* 가로 스크롤 추가 */
@@ -24,10 +15,6 @@
         border: 1px solid #ddd;  /* 테이블 셀의 테두리 설정 */
         padding: 8px;  /* 셀 내부 여백 설정 */
         text-align: left;  /* 텍스트를 왼쪽 정렬 */
-    }
-
-    th {
-        background-color: #f2f2f2;  /* 헤더 배경색 설정 */
     }
 
 </style>
@@ -66,9 +53,6 @@
                             <h4 id="list-item-2">회사별 거래 확인</h4>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <canvas id="PieChart1"></canvas>
-                                    </div>
                                     <form class="col-3" action="" method="post">
                                         {% csrf_token %}
                                         {{ search_form|crispy }}
@@ -88,19 +72,186 @@
                                     {{ company_info_form|crispy }}
                                     <button class="btn btn-primary mt-3" type="submit" name="company_info_submit">Search</button>
                                 </form>
-                                {% if company_df %}
+                                {% if company_list %}
                                     <hr>
                                     <b>거래 정보</b>
                                     <div class="table-responsive">
-                                        {{ company_df|safe }}
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="bg-light">일자</th>
+                                                    <th class="bg-light">회사명</th>
+                                                    <th class="bg-light">우편번호</th>
+                                                    <th class="bg-light">신청인</th>
+                                                    <th class="bg-light">연락처</th>
+                                                    <th class="bg-light">진행상황</th>
+                                                    <th class="bg-light">송장번호</th>
+                                                    <th class="bg-light">지르코니아블록</th>
+                                                    <th class="bg-light">지르코니아분말</th>
+                                                    <th class="bg-light">환봉</th>
+                                                    <th class="bg-light">밀링툴</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for item in company_list %}
+                                                <tr>
+                                                    <td>{{ item.일자 }}</td>
+                                                    <td>{{ item.회사명 }}</td>
+                                                    <td>{{ item.우편번호 }}</td>
+                                                    <td>{{ item.신청인 }}</td>
+                                                    <td>{{ item.연락처 }}</td>
+                                                    <td>{{ item.진행상황 }}</td>
+                                                    <td>{{ item.송장번호 }}</td>
+                                                    <td>{{ item.지르코니아블록 }}</td>
+                                                    <td>{{ item.지르코니아분말 }}</td>
+                                                    <td>{{ item.환봉 }}</td>
+                                                    <td>{{ item.밀링툴 }}</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination justify-content-center">
+                                                {% if company_list.has_previous %}
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="?page=1" aria-label="First">
+                                                            <span aria-hidden="true">&laquo; 처음으로</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="?page={{ company_list.previous_page_number }}" aria-label="Previous">
+                                                            <span aria-hidden="true">이전</span>
+                                                        </a>
+                                                    </li>
+                                                {% else %}
+                                                    <li class="page-item disabled">
+                                                        <span class="page-link">&laquo; 처음으로</span>
+                                                    </li>
+                                                    <li class="page-item disabled">
+                                                        <span class="page-link">이전</span>
+                                                    </li>
+                                                {% endif %}
+
+                                                <li class="page-item active bg-light">
+                                                    <span class="page-link border-secondary bg-light text-black">
+                                                        Page {{ company_list.number }} of {{ company_list.paginator.num_pages }}
+                                                    </span>
+                                                </li>
+
+                                                {% if company_list.has_next %}
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="?page={{ company_list.next_page_number }}" aria-label="Next">
+                                                            <span aria-hidden="true">다음</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="?page={{ company_list.paginator.num_pages }}" aria-label="Last">
+                                                            <span aria-hidden="true">끝으로 &raquo;</span>
+                                                        </a>
+                                                    </li>
+                                                {% else %}
+                                                    <li class="page-item disabled">
+                                                        <span class="page-link">다음</span>
+                                                    </li>
+                                                    <li class="page-item disabled">
+                                                        <span class="page-link">끝으로 &raquo;</span>
+                                                    </li>
+                                                {% endif %}
+                                            </ul>
+                                        </nav>
                                     </div>
+                                {% else %}
+                                    <p>거래 정보가 없습니다</p>
                                 {% endif %}
-                                {% if user_df %}
+                                {% if user_list %}
                                     <b>회원 정보</b>
-                                    <div class="table-responsive">
-                                        {{ user_df|safe }}
+                                        <div class="table-responsive">
+                                            <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="bg-light">이름</th>
+                                                        <th class="bg-light">회사명</th>
+                                                        <th class="bg-light">휴대폰번호</th>
+                                                        <th class="bg-light">마지막로그인</th>
+                                                        <th class="bg-light">활성여부</th>
+                                                        <th class="bg-light">등록일</th>
+                                                        <th class="bg-light">우편번호</th>
+                                                        <th class="bg-light">주소</th>
+                                                        <th class="bg-light">상세주소</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for item in user_list %}
+                                                    <tr>
+                                                        <td>{{ item.이름 }}</td>
+                                                        <td>{{ item.회사명 }}</td>
+                                                        <td>{{ item.휴대폰번호 }}</td>
+                                                        <td>{{ item.마지막로그인 }}</td>
+                                                        <td>{{ item.활성여부 }}</td>
+                                                        <td>{{ item.등록일 }}</td>
+                                                        <td>{{ item.우편번호 }}</td>
+                                                        <td>{{ item.주소 }}</td>
+                                                        <td>{{ item.상세주소 }}</td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                            <nav aria-label="Page navigation">
+                                                <ul class="pagination justify-content-center">
+                                                    {% if user_list.has_previous %}
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="?page=1" aria-label="First">
+                                                                <span aria-hidden="true">&laquo; 처음으로</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="?page={{ user_list.previous_page_number }}" aria-label="Previous">
+                                                                <span aria-hidden="true">이전</span>
+                                                            </a>
+                                                        </li>
+                                                    {% else %}
+                                                        <li class="page-item disabled">
+                                                            <span class="page-link">&laquo; 처음으로</span>
+                                                        </li>
+                                                        <li class="page-item disabled">
+                                                            <span class="page-link">이전</span>
+                                                        </li>
+                                                    {% endif %}
+
+                                                    <li class="page-item active bg-light">
+                                                        <span class="page-link border-secondary bg-light text-black">
+                                                            Page {{ user_list.number }} of {{ user_list.paginator.num_pages }}
+                                                        </span>
+                                                    </li>
+
+                                                    {% if user_list.has_next %}
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="?page={{ user_list.next_page_number }}" aria-label="Next">
+                                                                <span aria-hidden="true">다음</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="?page={{ user_list.paginator.num_pages }}" aria-label="Last">
+                                                                <span aria-hidden="true">끝으로 &raquo;</span>
+                                                            </a>
+                                                        </li>
+                                                    {% else %}
+                                                        <li class="page-item disabled">
+                                                            <span class="page-link">다음</span>
+                                                        </li>
+                                                        <li class="page-item disabled">
+                                                            <span class="page-link">끝으로 &raquo;</span>
+                                                        </li>
+                                                    {% endif %}
+                                                </ul>
+                                            </nav>
+                                        </div>
                                     </div>
                                     <hr>
+                                {% else %}
+                                    <p>회원 정보가 없습니다.</p>
                                 {% endif %}
                                 <br>
                             </div>

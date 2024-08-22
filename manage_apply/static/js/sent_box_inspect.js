@@ -136,50 +136,50 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // 폼 제출 시 입력 값 유효성 검사 함수
-function check_input() {
+function check_sent() {
 
     // 최소 한 종류의 폐기물이 1개 이상인지 확인
     if (
-        parseInt(document.box_form['z_b_num'].value) === 0 &&
-        parseInt(document.box_form['z_p_num'].value) === 0 &&
-        parseInt(document.box_form['r_b_num'].value) === 0 &&
-        parseInt(document.box_form['tool_num'].value) === 0
+        parseInt(document.sent_form['z_b_num'].value) === 0 &&
+        parseInt(document.sent_form['z_p_num'].value) === 0 &&
+        parseInt(document.sent_form['r_b_num'].value) === 0 &&
+        parseInt(document.sent_form['tool_num'].value) === 0
     ) {
         alert("적어도 한 종류의 폐기물 개수가 1개 이상이어야 합니다.");
         return false;
     }
     
     // 회사명 유효성 검사
-    if (checkNormal(document.box_form['company'].value) || checkLen(document.box_form['company'].value)) {
-        document.box_form.company.focus();
+    if (checkNormal(document.sent_form['company'].value) || checkLen(document.sent_form['company'].value)) {
+        document.sent_form.company.focus();
         alert("회사명을 정확히 작성해 주세요(10자 이하)");
         return false;
     }
 
     // 회사 연락처 유효성 검사
-    if (!checkNormal(document.box_form['com_num'].value) && !checkNumber(document.box_form['com_num'].value)) {
-        document.box_form.com_num.focus();
+    if (!checkNormal(document.sent_form['com_num'].value) && !checkNumber(document.sent_form['com_num'].value)) {
+        document.sent_form.com_num.focus();
         alert("회사 연락처를 형식에 맞게 작성해 주세요");
         return false;
     }
 
     // 담당자 성함 유효성 검사
-    if (checkNormal(document.box_form['applicant'].value) || checkLen(document.box_form['applicant'].value)) {
-        document.box_form.applicant.focus();
+    if (checkNormal(document.sent_form['applicant'].value) || checkLen(document.sent_form['applicant'].value)) {
+        document.sent_form.applicant.focus();
         alert("담당자 성함을 정확히 작성해 주세요(10자 이하)");
         return false;
     }
 
     // 담당자 연락처 유효성 검사
-    if (checkNormal(document.box_form['apcan_phone'].value) || !checkNumber(document.box_form['apcan_phone'].value)) {
-        document.box_form.apcan_phone.focus();
+    if (checkNormal(document.sent_form['apcan_phone'].value) || !checkNumber(document.sent_form['apcan_phone'].value)) {
+        document.sent_form.apcan_phone.focus();
         alert("담당자 연락처를 정확히 작성해 주세요");
         return false;
     }
 
     // 상세주소 유효성 검사
-    if (checkNormal(document.box_form['sample6_detailAddress'].value)) {
-        document.box_form.sample6_detailAddress.focus();
+    if (checkNormal(document.sent_form['sample6_detailAddress'].value)) {
+        document.sent_form.sample6_detailAddress.focus();
         alert("상세주소를 입력해주세요");
         return false;
     }
@@ -193,5 +193,6 @@ function check_input() {
     }
 
     // 모든 유효성 검사를 통과하면 폼 제출
+    document.sent_form.submit();
     return true;
 }
