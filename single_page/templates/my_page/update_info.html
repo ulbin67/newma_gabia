@@ -8,6 +8,7 @@
         border-radius: 10px;
         padding: 40px 20px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: 85%;
     }
 
     .btn-custom {
@@ -41,64 +42,64 @@
 {% endif %}
 
 <div class="container d-flex justify-content-center">
-    <div class="border col-10">
+    <div class="border">
         <form name="update" class="col-10 mx-auto" action="" method="post"> {% csrf_token %}
             <h4 class="mb-3">회원 정보 수정</h4><br>
             <div class="row mb-3 d-flex align-items-center">
-                <label class="col-2 col-form-label">아이디</label>
-                <div class="col-7">
+                <label class="col-md-2 col-form-label">아이디</label>
+                <div class="col-md-7 col-12">
                     {{form.username|add_class:"form-control bg-light"|attr:"readonly=readonly placeholder=아이디"}}
                 </div>
-                <div class="col-3">
+                <div class="col-md-3 col-12">
                     <button type="button" id="check_id_button" onclick="check_id()" class="btn btn-custom">아이디 중복체크</button>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label class="col-2 col-form-label">회사명</label>
-                <div class="col-10">
+                <label class="col-md-2 col-12 col-form-label">회사명</label>
+                <div class="col-md-10 col-12">
                     {{form.company_name|add_class:"form-control"|attr:"placeholder=회사명"}}
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label class="col-2 col-form-label">담당자명</label>
-                <div class="col-10">
+                <label class="col-md-2 col-12 col-form-label">담당자명</label>
+                <div class="col-md-10 col-12">
                     {{form.name|add_class:"form-control"|attr:"placeholder=담당자명"}}
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label class="col-2 col-form-label">이메일</label>
-                <div class="col-10">
+                <label class="col-md-2 col-12 col-form-label">이메일</label>
+                <div class="col-md-10 col-12">
                     {{form.email|add_class:"form-control mb-2"|attr:"placeholder=이메일"}}
                     <p class="text-danger text-center">비밀번호 찾기에서 사용됩니다. 현재 사용하시는 이메일을 작성해주세요</p>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label class="col-2 col-form-label">주소</label>
-                <div class="col-10">
+                <label class="col-md-2 col-12 col-form-label">수거 신청<br> 주소</label>
+                <div class="col-md-10 col-12">
                     <div class="row mb-2 d-flex align-items-center">
-                        <div class="col-6">
+                        <div class="col-md-6 col-4">
                             {{ form.address_num | add_class:"form-control bg-light"|attr:"id=sample6_postcode placeholder=우편번호 readonly='readonly'" }}
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6 col-8">
                             <button type="button" onclick="sample6_execDaumPostcode()" class="btn btn-custom">우편번호 찾기</button>
                         </div>
                     </div>
                     <div class="row mb-2">
-                        <div class="col">
+                        <div class="col-12">
                             {{ form.address_info | add_class:"form-control form-control-custom bg-light"|attr:"id=sample6_address placeholder=도로명주소 readonly='readonly'" }}
                         </div>
                     </div>
                     <div class="row mb-2">
-                        <div class="col">
+                        <div class="col-12">
                             {{ form.address_detail | add_class:"form-control form-control-custom"|attr:"id=sample6_detailAddress placeholder=상세주소" }}
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
+                        <div class="col-12">
                             {{ form.deli_request|add_class:"form-control form-control-custom"|attr:"id=sample6_extraAddress placeholder=세부사항" }}
                         </div>
                     </div>
@@ -106,13 +107,13 @@
             </div>
 
             <div class="row mb-3">
-                <label for="phone_telecom" class="col-sm-2 col-form-label">휴대폰</label>
-                <div class="col">
+                <label for="phone_telecom" class="col-md-2 col-12 col-form-label">휴대폰</label>
+                <div class="col-md-10 col-12">
                     <div class="row d-flex align-items-center mb-3">
-                        <div class="col-6">
+                        <div class="col-md-6 col-12">
                             {{form.phone_num|add_class:"form-control bg-light"|attr:"readonly"}}
                         </div>
-                        <div class="col-3">
+                        <div class="col-md-3 col-12">
                             <button type="button" id = "verify_button" onclick="verify()" class="btn btn-custom">번호 변경</button>
                         </div>
                     </div>
