@@ -24,11 +24,11 @@
         background-color: #0056b3;
     }
 
-    .form-control-custom {
-        max-height: 3.6em; /* 2줄 높이 설정 (1줄 높이 ≈ 1.8em) */
-        overflow-y: auto; /* 수직 스크롤바 추가 */
-        line-height: 1.8em; /* 줄 높이 설정 */
-        resize: vertical; /* 사용자가 필드 크기를 수직으로 조절할 수 있게 함 (선택적) */
+    @media (max-width: 576px) {
+        .border {
+            padding: 20px 10px; /* 작은 화면에서 패딩 줄이기 */
+            width: 100%;
+        }
     }
 </style>
 {% endblock %}
