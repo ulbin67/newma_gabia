@@ -21,3 +21,4 @@ wheel==0.44.0
 coolsms_python_sdk==2.0.3
 django-model-utils==4.5.1
 mysqlclient==2.2.4
+slack_sdk==3.31.0
