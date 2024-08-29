@@ -1,6 +1,4 @@
 from django.db import models
-from django.core.validators import RegexValidator
-from single_page.models import User
 
 #박스 요청 및 수거 date 틀
 class Apply(models.Model):
@@ -67,6 +65,7 @@ class Apply(models.Model):
         
         # 슈퍼클래스의 delete 메소드를 호출하여 실제 삭제를 수행
         super(Apply, self).delete(*args, **kwargs)
+
 
 #회사 정보를 저장하기 위한 쿼리! 
 class CompanyInfo(models.Model):

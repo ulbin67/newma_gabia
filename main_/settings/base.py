@@ -30,11 +30,14 @@ SECRET_KEY = get_secret("SECRET_KEY")
 # NAVER API Credentials
 NAVER_CLIENT_ID = get_secret('NAVER_CLIENT_ID')  # 네이버 클라이언트 ID
 NAVER_CLIENT_SECRET = get_secret('NAVER_CLIENT_SECRET')
+
+# COOLSMS
 COOL_SMS_API = get_secret('COOL_SMS_API')
 COOL_SMS_SECRET = get_secret('COOL_SMS_SECRET')
 
-# 사용 앱, 위 django.~은 기본 앱으로 삭제 X
-# 앱 추가할 때마다 아래에 추가 필요
+# SLACK
+SLACK_API_TOKEN = get_secret('SLACK_API_TOKEN')
+SLACK_CHANNEL = get_secret('SLACK_CHANNEL')
 
 INSTALLED_APPS = [
     "django.contrib.admin",

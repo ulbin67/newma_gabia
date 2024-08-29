@@ -22,13 +22,15 @@ class User(AbstractUser):
     deli_request = models.TextField(null=True,blank=True, verbose_name='세부사항')
     phone_num = models.CharField(max_length=14, verbose_name='휴대폰 번호')
 
+# 인증 sms 관리 모델
 class Authsms(TimeStampedModel):
     phone_number = models.CharField(verbose_name='휴대폰 번호', primary_key=True, max_length=11)
     auth_number = models.IntegerField(null=True, verbose_name='인증 번호')
     is_phone_verified = models.BooleanField(default=False)
     class Meta:
-        db_table = 'auth_sms'
+        db_table = 'auth_sms'               # 데이터베이스 테이블 이름을 'auth_sms'로 지정
 
+    # 모델 저장 시 호출되는 메서드
     def save(self, *args, **kwargs):
         send_sms = kwargs.pop('send_sms', True)
         if not self.auth_number:  # 인증번호가 없을 경우 새로 발급
@@ -39,6 +41,7 @@ class Authsms(TimeStampedModel):
         if send_sms and self.auth_number:
             self.send_sms()
 
+    # SMS 전송 메서드 정의
     def send_sms(self):
 
         api_key = settings.COOL_SMS_API
@@ -66,6 +69,7 @@ class Authsms(TimeStampedModel):
             print("Error Code : %s" % e.code)
             print("Error Message : %s" % e.msg)
 
+    # 인증 번호 요청 메서드 (클래스 메서드)
     @classmethod
     def request_auth_number(cls, p_num):
         # 기존 인증 번호가 있으면 무효화
@@ -75,6 +79,7 @@ class Authsms(TimeStampedModel):
             authsms.save(send_sms=True)  # 인증번호 갱신 후 SMS 전송
         return authsms
 
+    # 인증 번호 확인 메서드 (클래스 메서드)
     @classmethod
     def check_auth_number(cls, p_num, c_num):
         time_limit = timezone.now() - datetime.timedelta(minutes=5)

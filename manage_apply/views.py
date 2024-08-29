@@ -12,6 +12,7 @@ import pandas as pd
 from .query import 달별박스수계산
 import os
 from django.core.paginator import Paginator
+from . import slack
 
 # Create your views here.
 
@@ -56,7 +57,19 @@ def box_apply_create(request):
 
         box_num = int(request.POST.get('box_num', ''))
 
-        # 회사 정보가 이미 존재하는지 확인하여 있으면 정보 갱신, 없으면 회사 추가
+        context = {
+            'company': company,
+           'applicant': applicant,
+           'apcan_phone': apcan_phone,
+           'address_num': address_num,
+            'address_info': address_info,
+           'address_detail': address_detail,
+           'box_num': box_num,
+           'progress': 0        # 박스 신청
+        }
+        # 슬랙 알림봇 메시지 전송
+        slack.send_slack_message(context)
+
         # 회사 정보가 이미 존재하는지 확인하여 있으면 정보 갱신, 없으면 회사 추가
         if CompanyInfo.objects.filter(company=company).exists():
             company_already = CompanyInfo.objects.get(company=company)
@@ -127,6 +140,23 @@ def sent_apply_create(request):
         address_info = request.POST.get('sample6_address', '')
         address_detail = request.POST.get('sample6_detailAddress', '')
         deli_request = request.POST.get('sample6_extraAddress', '')
+
+        context = {
+            'company': company,
+            'applicant': applicant,
+            'apcan_phone': apcan_phone,
+            'address_num': address_num,
+            'address_info': address_info,
+            'address_detail': address_detail,
+            'zir_block_count': zir_block_count,
+            'zir_powder_count': zir_powder_count,
+            'round_bar_count': round_bar_count,
+            'tool_count': tool_count,
+            'invoice_num': invoice_num,
+            'progress': 1                       # 수거 요청
+        }
+        # 슬랙 알림봇 메시지 전송
+        slack.send_slack_message(context)
 
         # 회사 정보가 이미 존재하는지 확인하여 있으면 정보 갱신, 없으면 회사 추가
         if CompanyInfo.objects.filter(company=company).exists():
