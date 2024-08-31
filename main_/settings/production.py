@@ -8,6 +8,7 @@ ALLOWED_HOSTS = [
     ".newmakorea.com",
     '117.52.84.176',
     '.youngwon.site'
+    '114.108.153.117'
 ]
 
 # PostgreSQL이나 MySQL을 배포 환경에서 사용
